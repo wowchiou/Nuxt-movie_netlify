@@ -6,7 +6,7 @@
     >
       <NuxtImg
         v-if="media.poster_path"
-        :src="`https://image.tmdb.org/t/p/w400${media.poster_path}`"
+        :src="getExternalPic(media.poster_path)"
         :alt="media.title || media.name"
         width="400"
         height="600"
