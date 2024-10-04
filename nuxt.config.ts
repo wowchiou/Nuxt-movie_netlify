@@ -94,7 +94,7 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
   },
   image: {
-    domains: ['http://localhost:3000'],
+    domains: ['http://localhost:3000', 'wowchiou-nuxt-movies.netlify.app'],
   },
   tailwindcss: {
     cssPath: ['~/assets/style/tailwind.css', { injectPosition: 'first' }],
