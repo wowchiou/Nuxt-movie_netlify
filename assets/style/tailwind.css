@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply box-border;
+}
+
+html {
+  @apply bg-gray-950 text-gray-100;
+}
+
+a,
+img,
+span {
+  @apply inline-block align-middle;
+}
+
+.reset-modal .el-dialog {
+  @apply bg-transparent p-0;
+}
+.reset-modal .el-dialog__header {
+  @apply hidden;
+}

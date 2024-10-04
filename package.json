@@ -1,0 +1,41 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "cross-env NUXT_PUBLIC_ENV=dev nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "build:uat": "cross-env NUXT_PUBLIC_ENV=uat nuxt build",
+    "build:prod": "cross-env NUXT_PUBLIC_ENV=prod nuxt build"
+  },
+  "dependencies": {
+    "@element-plus/nuxt": "^1.0.10",
+    "@nuxt/icon": "^1.5.1",
+    "@nuxt/image": "^1.8.0",
+    "@nuxtjs/i18n": "^8.5.4",
+    "@pinia/nuxt": "^0.5.4",
+    "@vueuse/core": "^11.1.0",
+    "@vueuse/nuxt": "^11.1.0",
+    "ipx": "^3.0.1",
+    "lru-cache": "^11.0.1",
+    "nuxt": "^3.13.0",
+    "ohash": "^1.1.4",
+    "pinia": "^2.2.2",
+    "sass": "^1.79.1",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^0.5.7",
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.10.0",
+    "typescript": "^5.6.2"
+  },
+  "overrides": {
+    "vue": "latest"
+  }
+}

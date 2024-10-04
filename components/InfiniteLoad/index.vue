@@ -1,0 +1,32 @@
+<template>
+  <div class="infinite_loader">
+    <div v-infinite-scroll="loadMoreData" :infinite-scroll-disabled="disabled">
+      <slot />
+    </div>
+    <div v-if="loading" class="text-3xl text-gray-300 text-center py-8">
+      <NuxtIcon name="line-md:loading-twotone-loop" />
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+const props = defineProps<{
+  loading: boolean;
+  page: number;
+  totalPage: number;
+}>();
+
+const emit = defineEmits<{
+  (e: 'load'): void;
+}>();
+
+// computed
+const noMoreData = computed(() => props.page > props.totalPage);
+const disabled = computed(() => noMoreData.value || props.loading);
+
+// methods
+function loadMoreData() {
+  if (disabled.value) return;
+  emit('load');
+}
+</script>
