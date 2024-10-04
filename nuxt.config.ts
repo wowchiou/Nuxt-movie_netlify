@@ -94,7 +94,11 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
   },
   image: {
-    domains: ['http://localhost:3000', 'wowchiou-nuxt-movies.netlify.app'],
+    domains: [
+      'http://localhost:3000',
+      'wowchiou-nuxt-movies.netlify.app',
+      'image.tmdb.org',
+    ],
   },
   tailwindcss: {
     cssPath: ['~/assets/style/tailwind.css', { injectPosition: 'first' }],
