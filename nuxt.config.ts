@@ -31,11 +31,15 @@ export default defineNuxtConfig({
     strategy: 'prefix_and_default',
     locales: [
       {
+        code: 'zh-TW',
+        name: '繁體中文',
+        file: 'zh-TW.json',
+      },
+      {
         code: 'zh-CN',
         name: '简体中文',
         file: 'zh-CN.json',
       },
-
       {
         code: 'ja',
         name: '日本語',
@@ -69,7 +73,7 @@ export default defineNuxtConfig({
     ],
     // lazy: true,
     langDir: 'locales',
-    defaultLocale: 'zh-CN',
+    defaultLocale: 'zh-TW',
   },
   image: {
     domains: [

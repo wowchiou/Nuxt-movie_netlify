@@ -10,7 +10,7 @@
       <NuxtLinkLocale
         v-for="itm in searchList"
         :key="itm.id"
-        :to="`/${type}/${itm.id}`"
+        :to="`/${type}/${itm.id}/overview`"
       >
         <CardMedia :media="itm" />
       </NuxtLinkLocale>

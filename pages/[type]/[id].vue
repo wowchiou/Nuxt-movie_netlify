@@ -1,21 +1,32 @@
 <template>
   <!-- pages/[type]/[id] -->
-  <div>
-    <MediaHero :media="media" />
+  <div class="relative">
+    <div ref="hero">
+      <MediaHero :media="media" />
+    </div>
 
-    <Tabs :data="tabList">
-      <template #default="{ active }">
-        <DetailOverview
-          v-if="active.title === tabList[0].title"
-          :data="media"
-        />
-        <DetailVideos
-          v-if="active.title === tabList[1].title"
-          :data="media.videos?.results"
-        />
-        <DetailPhotos v-if="active.title === tabList[2].title" :data="media" />
-      </template>
-    </Tabs>
+    <div
+      class="sticky top-0 left-0 z-20 lg:relative flex justify-center items-center gap-[50px] sm:gap-[100px] py-4 backdrop-blur-md backdrop-brightness-50"
+    >
+      <NuxtLinkLocale
+        v-for="itm in tabList"
+        :key="`${type}-${id}-${itm.path}`"
+        v-slot="{ isActive }"
+        :to="`/${type}/${id}/${itm.path}`"
+        class="relative z-10 text-[18px] sm:text-[22px] cursor-pointer"
+        @click="changePage"
+      >
+        <span :class="isActive ? 'text-primary' : ''">
+          {{ $t(itm.title) }}
+        </span>
+      </NuxtLinkLocale>
+    </div>
+    <div class="pt-6">
+      <NuxtPage
+        :page-key="(route) => `${route.params.type}/${route.params.id}`"
+        :data="media"
+      />
+    </div>
 
     <!-- 演員 -->
     <CardWrapper v-if="media.credits?.cast.length" class="cast_cards mt-8">
@@ -39,7 +50,7 @@
       <NuxtLinkLocale
         v-for="item in recommended.results"
         :key="item.id"
-        :to="`/${item.media_type}/${item.id}`"
+        :to="`/${item.media_type}/${item.id}/overview`"
         class="w-[40%] sm:w-[250px] flex-shrink-0"
       >
         <CardMedia :media="item" />
@@ -52,16 +63,11 @@
 import type { MediaType } from '~/types';
 
 definePageMeta({
-  key: (route) => route.fullPath,
+  key: (route) => `${route.params.type}/${route.params.id}`,
   middleware: 'movie-or-tv',
 });
 
 const route = useRoute();
-const tabList = [
-  { title: 'Overview' },
-  { title: 'Videos' },
-  { title: 'Media Photos' },
-];
 
 // computed
 const type = computed(() => (route.params.type as MediaType) || 'movie');
@@ -72,6 +78,20 @@ const [media, recommended] = await Promise.all([
   getTMDBMedia(type.value, Number(id.value)),
   getTMDBRecommendations(type.value, Number(id.value)),
 ]);
+
+const tabList = [
+  { title: 'Overview', path: 'overview' },
+  { title: 'Videos', path: 'videos' },
+  { title: 'Media Photos', path: 'photos' },
+];
+
+const hero = ref<HTMLDivElement | null>(null);
+
+function changePage() {
+  if (!hero.value) return;
+  const heroHeight = hero.value.offsetHeight;
+  window.scrollTo({ top: heroHeight, behavior: 'smooth' });
+}
 
 useHead({
   title: media.name || media.title,

@@ -15,7 +15,7 @@
     <NuxtLinkLocale
       v-for="item in result"
       :key="item.id"
-      :to="`/${data.type}/${item.id}`"
+      :to="`/${data.type}/${item.id}/overview`"
       class="w-[50%] sm:w-[250px] flex-shrink-0"
     >
       <CardMedia :media="item" />
