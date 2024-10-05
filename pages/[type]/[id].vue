@@ -36,14 +36,14 @@
       <template #title>
         {{ $t('More like this') }}
       </template>
-      <NuxtLink
+      <NuxtLinkLocale
         v-for="item in recommended.results"
         :key="item.id"
         :to="`/${item.media_type}/${item.id}`"
         class="w-[40%] sm:w-[250px] flex-shrink-0"
       >
         <CardMedia :media="item" />
-      </NuxtLink>
+      </NuxtLinkLocale>
     </CardWrapper>
   </div>
 </template>
