@@ -25,7 +25,7 @@ export default defineNuxtConfig({
   i18n: {
     detectBrowserLanguage: {
       useCookie: true,
-      cookieKey: 'i18n_redirected_wowchiou_nuxt_movies',
+      cookieKey: 'i18n_redirected_wowchiou-nuxt-movies',
       fallbackLocale: 'en',
     },
     strategy: 'prefix_and_default',
@@ -41,14 +41,14 @@ export default defineNuxtConfig({
         file: 'zh-CN.json',
       },
       {
-        code: 'ja',
-        name: '日本語',
-        file: 'ja.json',
-      },
-      {
         code: 'en',
         name: 'English',
         file: 'en.json',
+      },
+      {
+        code: 'ja',
+        name: '日本語',
+        file: 'ja.json',
       },
       {
         code: 'de-DE',
