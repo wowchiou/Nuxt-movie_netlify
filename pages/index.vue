@@ -44,9 +44,12 @@
 </template>
 
 <script setup lang="ts">
+const localePath = useLocalePath();
+
 // data
 const search = ref('');
 
+// created
 const res = await getTMDBMediaWithQuery('movie', QUERY_LIST.movie[0].query);
 const moviesListIdx = getRandomMovies(3, res.results.length);
 const popularMovies = res.results.filter((_, idx) =>
@@ -56,7 +59,9 @@ const popularMovies = res.results.filter((_, idx) =>
 // methods
 function handleSearch(value: string) {
   if (!value) return;
-  navigateTo({ path: '/search', query: { key: value } });
+  const localeRoute = localePath({ path: '/search', query: { key: value } });
+  if (!localeRoute) return;
+  navigateTo(localeRoute);
 }
 
 function getRandomMovies(count: number, length: number) {

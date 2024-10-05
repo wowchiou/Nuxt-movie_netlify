@@ -32,13 +32,13 @@
         <template v-if="directors?.length">
           <div class="flex items-baseline">{{ $t('Director') }}</div>
           <div class="flex items-baseline gap-2">
-            <NuxtLink
+            <NuxtLinkLocale
               v-for="d in directors"
               :key="d.id"
               class="text-[12px] px-2 py-1 bg-gray-800 rounded"
             >
               {{ d.name }}
-            </NuxtLink>
+            </NuxtLinkLocale>
           </div>
         </template>
         <!-- 成本 -->
@@ -59,13 +59,13 @@
         <template v-if="data?.genres?.length && type">
           <div class="flex items-baseline">{{ $t('Genre') }}</div>
           <div class="flex items-baseline flex-wrap gap-2">
-            <NuxtLink
+            <NuxtLinkLocale
               v-for="genre of data.genres"
               :key="genre.id"
               class="text-[12px] px-2 py-1 bg-gray-800 rounded"
             >
               {{ genre.name }}
-            </NuxtLink>
+            </NuxtLinkLocale>
           </div>
         </template>
         <!-- 状态 -->

@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import type { QueryItem } from '~/types';
+import type { MediaType, QueryItem } from '~/types';
 
 definePageMeta({
   key: (route) => route.fullPath,
@@ -20,12 +20,8 @@ definePageMeta({
 
 const route = useRoute();
 const i18n = useI18n();
-const type = route.params.type as 'movie' | 'tv';
+const type = route.params.type as MediaType;
 const category = route.params.category as string;
-
-if (type !== 'movie' && type !== 'tv') {
-  throw new Error('Invalid type');
-}
 
 const queryItem = QUERY_LIST[type].find(
   (item) => item.query === category

@@ -44,7 +44,11 @@ defineProps<{
   error: ErrorData;
 }>();
 
+const localePath = useLocalePath();
+
 const handleError = () => {
-  clearError({ redirect: '/' });
+  let localeRoute = localePath('/');
+  if (!localeRoute) localeRoute = '/';
+  clearError({ redirect: localeRoute });
 };
 </script>

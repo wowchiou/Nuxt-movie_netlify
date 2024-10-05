@@ -10,11 +10,7 @@ export default defineNuxtConfig({
     [
       '@pinia/nuxt',
       {
-        autoImports: [
-          // 自动引入 `defineStore()`
-          'defineStore',
-          'acceptHMPUpdate',
-        ],
+        autoImports: ['defineStore', 'acceptHMPUpdate'],
       },
     ],
     '@nuxt/icon',
@@ -29,10 +25,22 @@ export default defineNuxtConfig({
   i18n: {
     detectBrowserLanguage: {
       useCookie: true,
+      cookieKey: 'i18n_redirected_wowchiou_nuxt_movies',
       fallbackLocale: 'en',
     },
-    strategy: 'no_prefix',
+    strategy: 'prefix_and_default',
     locales: [
+      {
+        code: 'zh-CN',
+        name: '简体中文',
+        file: 'zh-CN.json',
+      },
+
+      {
+        code: 'ja',
+        name: '日本語',
+        file: 'ja.json',
+      },
       {
         code: 'en',
         name: 'English',
@@ -54,44 +62,14 @@ export default defineNuxtConfig({
         file: 'it.json',
       },
       {
-        code: 'ja',
-        name: '日本語',
-        file: 'ja.json',
-      },
-      {
-        code: 'zh-CN',
-        name: '简体中文',
-        file: 'zh-CN.json',
-      },
-      {
-        code: 'pt-PT',
-        name: 'Português',
-        file: 'pt-PT.json',
-      },
-      {
-        code: 'pt-BR',
-        name: 'Português do Brasil',
-        file: 'pt-BR.json',
-      },
-      {
-        code: 'ru-RU',
-        name: 'Русский',
-        file: 'ru-RU.json',
-      },
-      {
         code: 'fr-FR',
         name: 'Français',
         file: 'fr-FR.json',
       },
-      {
-        code: 'uk-UA',
-        name: 'Українська',
-        file: 'uk-UA.json',
-      },
     ],
-    lazy: true,
+    // lazy: true,
     langDir: 'locales',
-    defaultLocale: 'en',
+    defaultLocale: 'zh-CN',
   },
   image: {
     domains: [
@@ -133,7 +111,6 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['stores', 'utils', 'service', 'constants'],
   },
-  // 配置完全类型化的环境覆盖
   $production: {
     routeRules: {
       '/api/**': { isr: false },

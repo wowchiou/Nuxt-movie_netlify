@@ -4,22 +4,22 @@
     <template #title>
       <div class="flex justify-between items-center">
         <h2>{{ $t(data.title) }}</h2>
-        <NuxtLink
+        <NuxtLinkLocale
           :to="`/${data.type}/category/${data.query}`"
           class="text-gray-500 sm:hover:text-gray-300 text-[13px] sm:text-[16px] cursor-pointer"
         >
           {{ $t('Explore more') }}
-        </NuxtLink>
+        </NuxtLinkLocale>
       </div>
     </template>
-    <NuxtLink
+    <NuxtLinkLocale
       v-for="item in result"
       :key="item.id"
       :to="`/${data.type}/${item.id}`"
       class="w-[50%] sm:w-[250px] flex-shrink-0"
     >
       <CardMedia :media="item" />
-    </NuxtLink>
+    </NuxtLinkLocale>
   </CardWrapper>
 </template>
 
