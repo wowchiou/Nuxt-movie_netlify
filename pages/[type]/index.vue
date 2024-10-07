@@ -5,7 +5,7 @@
       v-for="(itm, idx) in pageQuery"
       :key="`media-${itm.title}`"
       :data="itm"
-      :class="idx !== 0 && 'mt-8'"
+      :class="idx !== 0 && 'mt-14'"
     />
   </div>
 </template>

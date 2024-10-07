@@ -32,7 +32,7 @@
     </div>
 
     <!-- 海報 -->
-    <h2 class="flex items-end mt-8">
+    <h2 class="flex items-end mt-14">
       <p class="text-4xl">
         {{ $t('Posters') }}
       </p>

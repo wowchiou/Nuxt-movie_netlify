@@ -1,24 +1,24 @@
 <template>
   <!-- TheFooter -->
   <div
-    class="bg-gray-950 border-t-[1px] border-gray-600 px-6 py-10 text-gray-300"
+    class="bg-gray-950 border-t-[1px] border-gray-600 px-6 py-16 text-gray-300"
   >
     <div>
       <div class="flex items-center">
         <NuxtImg src="/img/movies.webp" width="20" />
         <span class="ml-2 text-3xl text-gray-100 text-bold">Nuxt Movies</span>
       </div>
-      <div class="flex items-center mt-2">
+      <div class="flex items-center mt-4">
         <span>Made with</span>
         <NuxtImg class="ml-2" src="/img/nuxt.svg" width="25" />
         <span class="ml-1">Nuxt</span>
       </div>
-      <div class="flex items-center mt-2">
+      <div class="flex items-center mt-4">
         <span>Data provided by</span>
         <NuxtImg class="ml-2" src="/img/tmdb2.svg" width="100" />
       </div>
       <div
-        class="flex items-center my-6 leading-1 text-gray-400 leading-normal"
+        class="flex items-center my-12 leading-1 text-gray-400 leading-normal"
       >
         This project uses the TMDB API but is not endorsed or certified by TMDB.
       </div>

@@ -1,6 +1,6 @@
 <template>
   <!-- pages/[type]/[id] -->
-  <div class="relative">
+  <div class="relative pb-6">
     <div ref="hero">
       <MediaHero :media="media" />
     </div>
@@ -29,7 +29,7 @@
     </div>
 
     <!-- 演員 -->
-    <CardWrapper v-if="media.credits?.cast.length" class="cast_cards mt-12">
+    <CardWrapper v-if="media.credits?.cast.length" class="cast_cards mt-14">
       <template #title>
         {{ $t('Cast') }}
       </template>
@@ -43,7 +43,7 @@
     </CardWrapper>
 
     <!-- 更多類似的 -->
-    <CardWrapper class="mt-8">
+    <CardWrapper class="mt-14">
       <template #title>
         {{ $t('More like this') }}
       </template>
