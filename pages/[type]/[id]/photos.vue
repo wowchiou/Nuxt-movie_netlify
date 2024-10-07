@@ -64,4 +64,12 @@ import type { MovieDetails } from '~/types';
 defineProps<{
   data: MovieDetails;
 }>();
+
+const emit = defineEmits<{
+  (e: 'mounted'): void;
+}>();
+
+onMounted(() => {
+  emit('mounted');
+});
 </script>

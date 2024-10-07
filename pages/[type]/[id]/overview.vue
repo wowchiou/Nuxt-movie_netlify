@@ -101,8 +101,11 @@ const props = defineProps<{
   data: MovieDetails;
 }>();
 
-const route = useRoute();
+const emit = defineEmits<{
+  (e: 'mounted'): void;
+}>();
 
+const route = useRoute();
 const type = computed(() => route.params.type || '');
 
 const directors = computed(() =>
@@ -113,4 +116,8 @@ const links = computed(() => ({
   ...props.data.external_ids,
   homepage: props.data.homepage,
 }));
+
+onMounted(() => {
+  emit('mounted');
+});
 </script>

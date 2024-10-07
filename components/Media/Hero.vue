@@ -7,7 +7,7 @@
     <div
       class="absolute top-1/2 left-0 px-6 lg:-translate-y-1/2 z-20 w-full max-h-[100%]"
     >
-      <h1 class="text-5xl">
+      <h1 class="text-5xl leading-tight">
         {{ media.name || media.title }}
       </h1>
       <div class="flex items-center gap-4 text-gray-400 text-3xl mt-4">

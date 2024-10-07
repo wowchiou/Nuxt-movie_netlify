@@ -6,15 +6,14 @@
     </div>
 
     <div
-      class="sticky top-0 left-0 z-20 lg:relative flex justify-center items-center gap-[12vw] sm:gap-[10rem] py-6 backdrop-blur-md backdrop-brightness-50"
+      class="sticky top-0 left-0 z-20 lg:relative flex justify-center items-center gap-[12vw] sm:gap-[10rem] backdrop-blur-md backdrop-brightness-50"
     >
       <NuxtLinkLocale
         v-for="itm in tabList"
         :key="`${type}-${id}-${itm.path}`"
         v-slot="{ isActive }"
         :to="`/${type}/${id}/${itm.path}`"
-        class="relative z-10 text-4xl cursor-pointer"
-        @click="changePage"
+        class="relative z-10 text-4xl py-6 cursor-pointer"
       >
         <span :class="isActive ? 'text-primary' : ''">
           {{ $t(itm.title) }}
@@ -25,6 +24,7 @@
       <NuxtPage
         :page-key="(route) => `${route.params.type}/${route.params.id}`"
         :data="media"
+        @mounted="changePage"
       />
     </div>
 
@@ -69,6 +69,7 @@ definePageMeta({
 
 const route = useRoute();
 const hero = ref<HTMLDivElement | null>(null);
+const isFirstLoad = ref(true);
 const type = computed(() => (route.params.type as MediaType) || 'movie');
 const id = computed(() => route.params.id as string);
 
@@ -84,7 +85,10 @@ const [media, recommended] = await Promise.all([
 ]);
 
 function changePage() {
-  if (!hero.value) return;
+  if (!hero.value || isFirstLoad.value) {
+    isFirstLoad.value = false;
+    return;
+  }
   const heroHeight = hero.value.offsetHeight;
   window.scrollTo({ top: heroHeight, behavior: 'smooth' });
 }

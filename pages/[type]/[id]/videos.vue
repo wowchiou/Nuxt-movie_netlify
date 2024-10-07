@@ -30,7 +30,15 @@ const props = defineProps<{
   data: MovieDetails;
 }>();
 
+const emit = defineEmits<{
+  (e: 'mounted'): void;
+}>();
+
 const videos = ref<Video[] | undefined>(
   props.data.videos?.results || undefined
 );
+
+onMounted(() => {
+  emit('mounted');
+});
 </script>
