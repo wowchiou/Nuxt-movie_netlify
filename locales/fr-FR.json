@@ -1,4 +1,6 @@
 {
+  "Web Description": "Explorez les dernières informations et critiques de films ! Ce site utilise l'API TMDB pour fournir des résumés détaillés, des notes et des critiques de films. Construit avec Nuxt3, il offre une expérience de visionnage fluide, vous aidant à découvrir facilement les films et séries populaires.",
+
   "Popular Movies": "Films Populaires",
   "Top Rated Movies": "Films les mieux notés",
   "Upcoming Movies": "Prochaines Sorties",

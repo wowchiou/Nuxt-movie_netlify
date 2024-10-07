@@ -22,7 +22,6 @@ const route = useRoute();
 const i18n = useI18n();
 const type = route.params.type as MediaType;
 const category = route.params.category as string;
-
 const queryItem = QUERY_LIST[type].find(
   (item) => item.query === category
 ) as QueryItem;

@@ -104,11 +104,12 @@ const props = defineProps<{
 
 const route = useRoute();
 
-// computed
+const type = computed(() => route.params.type || '');
+
 const directors = computed(() =>
   props.data.credits?.crew.filter((person) => person.job === 'Director')
 );
-const type = computed(() => route.params.type || '');
+
 const links = computed(() => ({
   ...props.data.external_ids,
   homepage: props.data.homepage,

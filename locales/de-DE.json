@@ -1,4 +1,6 @@
 {
+  "Web Description": "Erkunden Sie die neuesten Filminformationen und Bewertungen! Diese Website nutzt die TMDB-API, um detaillierte Filmzusammenfassungen, Bewertungen und Rezensionen bereitzustellen. Mit Nuxt3 gebaut, bietet sie ein reibungsloses Seherlebnis, das es Ihnen leicht macht, beliebte Filme und TV-Serien zu entdecken.",
+
   "Popular Movies": "Beliebte Filme",
   "Top Rated Movies": "Bestbewertete Filme",
   "Upcoming Movies": "Kommende Filme",

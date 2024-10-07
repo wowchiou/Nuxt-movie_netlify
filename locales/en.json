@@ -1,4 +1,6 @@
 {
+  "Web Description": "Explore the latest movie information and reviews! This website utilizes the TMDB API to provide detailed movie summaries, ratings, and reviews. Built with Nuxt3, it offers a smooth viewing experience, helping you easily discover popular movies and TV shows.",
+
   "Popular Movies": "Popular Movies",
   "Top Rated Movies": "Top Rated Movies",
   "Upcoming Movies": "Upcoming Movies",

@@ -17,19 +17,15 @@ definePageMeta({
 });
 
 const route = useRoute();
-
-// computed
 const pageType = computed(() => route.params.type);
-
-// created
-useHead({
-  title: pageType.value === 'movie' ? 'Movies' : 'TV Shows',
-});
-
 const pageQuery = computed(() => {
   if (pageType.value === 'movie' || pageType.value === 'tv') {
     return QUERY_LIST[pageType.value];
   }
   return [];
+});
+
+useHead({
+  title: pageType.value === 'movie' ? 'Movies' : 'TV Shows',
 });
 </script>

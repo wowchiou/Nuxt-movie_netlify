@@ -45,18 +45,15 @@
 
 <script setup lang="ts">
 const localePath = useLocalePath();
-
-// data
 const search = ref('');
 
-// created
+// 獲取熱門電影圖當背景
 const res = await getTMDBMediaWithQuery('movie', QUERY_LIST.movie[0].query);
 const moviesListIdx = getRandomMovies(3, res.results.length);
 const popularMovies = res.results.filter((_, idx) =>
   moviesListIdx.includes(idx)
 );
 
-// methods
 function handleSearch(value: string) {
   if (!value) return;
   const localeRoute = localePath({ path: '/search', query: { key: value } });

@@ -25,7 +25,6 @@ const props = defineProps<{
   origin: 'up' | 'down' | 'left' | 'right';
 }>();
 
-// computed
 const percentProgress = computed(() => 100 - props.percent);
 const getStyle = computed<StyleType>(() => {
   switch (props.origin) {
@@ -54,7 +53,6 @@ const getStyle = computed<StyleType>(() => {
   }
 });
 
-// methods
 function getTransform(image: string, container: string): StyleType {
   return {
     image: { transform: image },

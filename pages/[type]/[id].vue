@@ -68,16 +68,9 @@ definePageMeta({
 });
 
 const route = useRoute();
-
-// computed
+const hero = ref<HTMLDivElement | null>(null);
 const type = computed(() => (route.params.type as MediaType) || 'movie');
 const id = computed(() => route.params.id as string);
-
-// created
-const [media, recommended] = await Promise.all([
-  getTMDBMedia(type.value, Number(id.value)),
-  getTMDBRecommendations(type.value, Number(id.value)),
-]);
 
 const tabList = [
   { title: 'Overview', path: 'overview' },
@@ -85,7 +78,10 @@ const tabList = [
   { title: 'Media Photos', path: 'photos' },
 ];
 
-const hero = ref<HTMLDivElement | null>(null);
+const [media, recommended] = await Promise.all([
+  getTMDBMedia(type.value, Number(id.value)),
+  getTMDBRecommendations(type.value, Number(id.value)),
+]);
 
 function changePage() {
   if (!hero.value) return;

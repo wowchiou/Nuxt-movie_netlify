@@ -13,3 +13,27 @@ export const QUERY_LIST = {
     { type: 'tv', title: 'TV Shows Airing Today', query: 'airing_today' },
   ],
 };
+
+export const NAV_LIST = [
+  {
+    name: '首頁',
+    icon: 'material-symbols:house',
+    path: '/',
+    active: false,
+    type: 'home',
+  },
+  {
+    name: '電影',
+    icon: 'material-symbols:movie-filter-sharp',
+    path: '/movie',
+    active: true,
+    type: 'movie',
+  },
+  {
+    name: '電視',
+    icon: 'material-symbols:tv-guide-sharp',
+    path: '/tv',
+    active: true,
+    type: 'tv',
+  },
+];

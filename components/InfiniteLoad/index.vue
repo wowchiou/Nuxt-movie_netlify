@@ -20,11 +20,9 @@ const emit = defineEmits<{
   (e: 'load'): void;
 }>();
 
-// computed
 const noMoreData = computed(() => props.page > props.totalPage);
 const disabled = computed(() => noMoreData.value || props.loading);
 
-// methods
 function loadMoreData() {
   if (disabled.value) return;
   emit('load');

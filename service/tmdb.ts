@@ -14,11 +14,8 @@ export const _fetchTMDB = async (url: string, params: FetchParams) => {
     const locale = useNuxtApp().$i18n.locale;
     params.language = unref(locale);
   }
-  // let apiBaseUrl = 'https://wowchiou-nuxt-movies.netlify.app';
-  // if (import.meta.server || isDev) apiBaseUrl = '';
-  // console.log('api base url: ', apiBaseUrl);
-  return await $fetch(`/api/tmdb/${url}`, {
-    // baseURL: `${apiBaseUrl}/api/tmdb/`,
+  return await $fetch(url, {
+    baseURL: '/api/tmdb/',
     params,
   });
 };
@@ -32,6 +29,7 @@ export const fetchTMDB = async <T>(
   url: string,
   params: FetchParams
 ): Promise<T> => {
+  // 使用useState和cache来缓存请求结果
   const hash = ohash([url, params]);
   const state = useState<T | null>(hash, () => null);
   if (state.value) return state.value;

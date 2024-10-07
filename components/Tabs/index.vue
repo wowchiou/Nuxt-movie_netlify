@@ -26,6 +26,5 @@ const props = defineProps<{
   data: TabType[];
 }>();
 
-// data
 const currentTab = ref<TabType>(props.data[0]);
 </script>

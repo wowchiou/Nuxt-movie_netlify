@@ -2,7 +2,7 @@
   <!-- components/Media/Hero -->
   <div class="relative flex justify-end w-full">
     <div
-      class="absolute top-0 left-0 z-10 h-full w-full bg-gradient-to-t lg:bg-gradient-to-r from-gray-950 from-40%"
+      class="absolute top-0 left-0 z-10 h-full w-full bg-gradient-to-t lg:bg-gradient-to-r from-gray-950 from-20% lg:from-40%"
     />
     <div
       class="absolute top-1/2 left-0 px-4 sm:px-6 lg:px-0 lg:left-10 lg:-translate-y-1/2 z-20 w-full lg:w-[50%] max-h-[100%]"

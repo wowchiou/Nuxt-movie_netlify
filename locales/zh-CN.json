@@ -1,4 +1,6 @@
 {
+  "Web Description": "探索最新电影资讯和影评！本网站利用 TMDB API 提供详细的电影简介、评分和评论，使用 Nuxt3 打造流畅的观影体验，让您轻松发掘热门电影与剧集。",
+
   "Popular Movies": "热门电影",
   "Top Rated Movies": "高分电影",
   "Upcoming Movies": "即将上映电影",

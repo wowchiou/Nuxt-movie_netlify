@@ -7,29 +7,29 @@
 </template>
 
 <script setup lang="ts">
+const i18n = useI18n();
 const url = useRequestURL();
 const baseUrl = url.origin;
 
 useHead({
-  htmlAttrs: { lang: 'zh-CN' },
+  htmlAttrs: { lang: i18n.locale },
   titleTemplate: (titleChunk: string | undefined) => {
     return titleChunk ? `${titleChunk} | Nuxt Movies` : 'Nuxt Movies';
   },
   meta: [
     {
       name: 'description',
-      content:
-        '探索最新電影資訊和影評！本網站利用 TMDB API 提供詳細的電影簡介、評分和評論，使用 Nuxt3 打造流暢的觀影體驗，讓您輕鬆發掘熱門電影與影集。',
+      content: i18n.t('Web Description'),
     },
     {
       name: 'viewport',
       content: 'width=device-width, initial-scale=1, user-scalable=no',
     },
+    { name: 'google', content: 'notranslate' },
     { property: 'og:title', content: 'Nuxt Movie' },
     {
       property: 'og:description',
-      content:
-        '探索最新電影資訊和影評！本網站利用 TMDB API 提供詳細的電影簡介、評分和評論，使用 Nuxt3 打造流暢的觀影體驗，讓您輕鬆發掘熱門電影與影集。',
+      content: i18n.t('Web Description'),
     },
     { property: 'og:type', content: 'website' },
     { property: 'og:url', content: baseUrl },

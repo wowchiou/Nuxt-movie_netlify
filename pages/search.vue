@@ -31,18 +31,16 @@
 
 <script setup lang="ts">
 definePageMeta({ middleware: 'search' });
-useHead({ title: 'Search' });
 
 const route = useRoute();
 const router = useRouter();
 const key = route.query.key as string;
-
-// data
 const currentSearch = ref(key);
 const count = ref(0);
 
-// methods
 function handleSearch() {
   router.replace({ query: { ...route.query, key: currentSearch.value } });
 }
+
+useHead({ title: 'Search' });
 </script>

@@ -30,17 +30,12 @@ const emit = defineEmits<{
 }>();
 
 const route = useRoute();
-
-// data
 const searchList = ref<SearchResult[]>([]);
 const page = ref(1);
 const totalPage = ref(1);
 const loading = ref(false);
-
-// computed
 const noMoreData = computed(() => page.value > totalPage.value);
 
-// watch
 watch(
   () => route.query.key,
   () => {
@@ -50,10 +45,8 @@ watch(
   }
 );
 
-// created
 getSearchData();
 
-// methods
 async function getSearchData() {
   if (!props.search) return;
   if (noMoreData.value) return;

@@ -1,4 +1,6 @@
 {
+  "Web Description": "最新の映画情報とレビューを探索しましょう！このウェブサイトは TMDB API を利用して、映画の詳細な概要、評価、レビューを提供します。Nuxt3 を使用して構築されたスムーズな視聴体験により、人気の映画やテレビ番組を簡単に見つけることができます。",
+
   "Popular Movies": "人気の映画",
   "Top Rated Movies": "評価の高い映画",
   "Upcoming Movies": "近日公開の映画",
@@ -54,7 +56,7 @@
 
   "{count} items": "{count}件",
   "Search result for: {currentSearch}": "「{currentSearch}」の検索結果 ",
-  
+
   "Error occurred on fetching": "取得中にエラーが発生しました",
   "Retry": "再試行",
 

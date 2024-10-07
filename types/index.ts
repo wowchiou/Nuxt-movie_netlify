@@ -4,9 +4,13 @@ export type FetchParams = Record<string, string | number | boolean | undefined>;
 
 export type MediaType = 'movie' | 'tv';
 
-export type NavKey = 'name' | 'path' | 'icon';
-
-export type NavItem = Record<NavKey, string>;
+export interface NavItem {
+  name: string;
+  path: string;
+  icon: string;
+  active: boolean;
+  type: string;
+}
 
 export interface PageResult<T> {
   page: number;

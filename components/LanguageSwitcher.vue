@@ -16,11 +16,8 @@
 <script setup lang="ts">
 const { locale, locales, setLocale } = useI18n();
 const router = useRouter();
-
-// computed
 const availableLocales = computed(() => locales.value);
 
-// methods
 async function updateLocale(value: string) {
   await setLocale(value);
   router.go(0);

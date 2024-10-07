@@ -30,7 +30,7 @@ const props = defineProps<{
   data: QueryItem;
 }>();
 
+// 獲取電影或電視劇列表
 const res = await getTMDBMediaWithQuery(props.data.type, props.data.query);
-
 const result = ref(res.results);
 </script>
