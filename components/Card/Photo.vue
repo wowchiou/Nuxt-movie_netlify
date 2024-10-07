@@ -5,6 +5,7 @@
       :src="getExternalPic(data.file_path)"
       :width="data.width"
       :height="data.height"
+      loading="lazy"
       fit="cover"
       format="webp"
       class="w-full h-full"

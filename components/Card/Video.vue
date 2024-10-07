@@ -11,6 +11,7 @@
         height="720"
         fit="fill"
         format="webp"
+        loading="lazy"
       />
       <NuxtIcon
         name="material-symbols:smart-display-rounded"
