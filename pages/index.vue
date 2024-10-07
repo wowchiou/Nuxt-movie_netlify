@@ -1,6 +1,6 @@
 <template>
   <!-- pages/index -->
-  <div class="relative h-dvh w-full">
+  <div class="relative h-[calc(100lvh-60px)] md:h-lvh w-full">
     <div
       class="grid grid-cols-2 md:grid-cols-3 h-full blur-[8px] after:contents-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-gray-950 after:opacity-70"
     >
