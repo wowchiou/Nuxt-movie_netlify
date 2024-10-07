@@ -33,6 +33,7 @@ const route = useRoute();
 const searchList = ref<SearchResult[]>([]);
 const page = ref(1);
 const totalPage = ref(1);
+const totalResults = ref(0);
 const loading = ref(false);
 const noMoreData = computed(() => page.value > totalPage.value);
 
@@ -48,19 +49,24 @@ watch(
 getSearchData();
 
 async function getSearchData() {
-  if (!props.search) return;
+  if (!route.query.key) return setTotalCount(0);
   if (noMoreData.value) return;
   try {
     loading.value = true;
     const res = await searchTMDB(props.search, page.value);
     searchList.value = [...searchList.value, ...res.results];
     totalPage.value = res.total_pages;
-    emit('getTotal', res.total_results);
+    setTotalCount(res.total_results);
   } catch (error) {
     console.log(error);
   } finally {
     loading.value = false;
   }
+}
+
+function setTotalCount(count: number) {
+  totalResults.value = count;
+  emit('getTotal', count);
 }
 
 function loadMoreData() {

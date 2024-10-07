@@ -4,13 +4,16 @@
     <div
       class="sticky top-0 left-0 z-20 flex items-center p-6 border-b-[1px] border-gray-600 backdrop-blur-md backdrop-brightness-50"
     >
-      <NuxtIcon class="text-5xl" name="material-symbols:search-rounded" />
       <ElInput
         v-model="currentSearch"
         :placeholder="$t('Type something to search...')"
         size="large"
-        class="ml-4"
         @change="handleSearch"
+      />
+      <NuxtIcon
+        class="text-5xl ml-4 cursor-pointer"
+        name="material-symbols:search-rounded"
+        @click="handleSearch"
       />
     </div>
     <div class="px-6">
@@ -31,7 +34,7 @@
 </template>
 
 <script setup lang="ts">
-definePageMeta({ middleware: 'search' });
+// definePageMeta({ middleware: 'search' });
 
 const route = useRoute();
 const router = useRouter();

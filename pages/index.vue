@@ -27,13 +27,17 @@
         <NuxtImg class="w-full" width="60" src="/img/movies.webp" />
       </div>
       <div class="flex items-center">
-        <NuxtIcon class="text-6xl" name="material-symbols:search-rounded" />
         <ElInput
           v-model="search"
-          class="!w-full ml-4"
+          class="!w-full"
           :placeholder="$t('Type something to search...')"
           size="large"
           @change="handleSearch"
+        />
+        <NuxtIcon
+          class="text-6xl ml-4 cursor-pointer"
+          name="material-symbols:search-rounded"
+          @click="handleSearch"
         />
       </div>
     </div>
@@ -51,9 +55,12 @@ const popularMovies = res.results.filter((_, idx) =>
   moviesListIdx.includes(idx)
 );
 
-function handleSearch(value: string) {
-  if (!value) return;
-  const localeRoute = localePath({ path: '/search', query: { key: value } });
+function handleSearch() {
+  if (!search.value) return;
+  const localeRoute = localePath({
+    path: '/search',
+    query: { key: search.value },
+  });
   if (!localeRoute) return;
   navigateTo(localeRoute);
 }
