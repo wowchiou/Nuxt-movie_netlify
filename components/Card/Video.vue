@@ -17,7 +17,7 @@
         class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl text-gray-300 sm:group-hover:text-gray-100 duration-75"
       />
     </div>
-    <div class="leading-tight mt-2">
+    <div class="leading-tight mt-4">
       <p class="text-3xl line-clamp-2">{{ video.name }}</p>
       <p class="text-gray-400 mt-2">{{ video.type }}</p>
     </div>

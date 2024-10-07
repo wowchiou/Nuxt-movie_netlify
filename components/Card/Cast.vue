@@ -17,7 +17,7 @@
         />
       </p>
     </div>
-    <p class="mt-2 line-clamp-1">{{ cast.name }}</p>
+    <p class="mt-4 line-clamp-1">{{ cast.name }}</p>
     <p class="text-gray-400 mt-2 line-clamp-1">
       {{ cast.character || cast.known_for_department }}
     </p>
