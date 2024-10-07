@@ -21,6 +21,9 @@ export default defineNuxtConfig({
   ],
   icon: {
     componentName: 'NuxtIcon',
+    serverBundle: {
+      collections: ['material-symbols', 'simple-icons', 'mdi', 'line-md'], // <!--- this
+    },
   },
   i18n: {
     detectBrowserLanguage: {

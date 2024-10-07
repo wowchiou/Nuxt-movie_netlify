@@ -29,6 +29,10 @@
     "vue-router": "latest"
   },
   "devDependencies": {
+    "@iconify-json/line-md": "^1.2.1",
+    "@iconify-json/material-symbols": "^1.2.2",
+    "@iconify-json/mdi": "^1.2.0",
+    "@iconify-json/simple-icons": "^1.2.6",
     "@nuxt/eslint": "^0.5.7",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "cross-env": "^7.0.3",

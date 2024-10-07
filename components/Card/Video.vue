@@ -14,7 +14,7 @@
       />
       <NuxtIcon
         name="material-symbols:smart-display-rounded"
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl text-gray-300 sm:group-hover:text-gray-100 duration-75"
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-6xl text-gray-300 sm:group-hover:text-gray-100 duration-75"
       />
     </div>
     <div class="leading-tight mt-4">

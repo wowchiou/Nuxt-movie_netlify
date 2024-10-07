@@ -15,7 +15,7 @@
       </div>
       <div class="flex items-center mt-4">
         <span>Data provided by</span>
-        <NuxtImg class="ml-2" src="/img/tmdb2.svg" width="100" />
+        <NuxtImg class="ml-2" src="/img/tmdb.svg" width="50" />
       </div>
       <div
         class="flex items-center my-12 leading-1 text-gray-400 leading-normal"
