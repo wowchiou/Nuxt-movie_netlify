@@ -23,7 +23,7 @@
           v-for="(pic, idx) in data.images.backdrops"
           :key="`backdrop-${idx}`"
         >
-          <CardPhoto :data="pic" />
+          <CardPhoto :data="pic" width="400" height="250" />
         </div>
       </div>
       <div v-else class="text-3xl text-gray-400">
@@ -50,7 +50,7 @@
         class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4"
       >
         <div v-for="(pic, idx) in data.images.posters" :key="`poster-${idx}`">
-          <CardPhoto :data="pic" />
+          <CardPhoto :data="pic" width="250" height="400" />
         </div>
       </div>
       <div v-else class="text-gray-400 text-3xl">No Poster Photos Result.</div>
