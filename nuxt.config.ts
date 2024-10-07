@@ -93,8 +93,20 @@ export default defineNuxtConfig({
   },
   nitro: {
     routeRules: {
-      '/ipx/tmdb/**': { proxy: 'https://image.tmdb.org/t/p/original/**' },
-      '/ipx/yt/**': { proxy: 'https://img.youtube.com/**' },
+      '/ipx/tmdb/**': {
+        proxy: 'https://image.tmdb.org/t/p/original/**',
+        headers: {
+          // 設置緩存為一個月
+          'Cache-Control': 'public, max-age=2592000, immutable',
+        },
+      },
+      '/ipx/yt/**': {
+        proxy: 'https://img.youtube.com/**',
+        headers: {
+          // 設置緩存為一個月
+          'Cache-Control': 'public, max-age=2592000, immutable',
+        },
+      },
     },
   },
   app: {
