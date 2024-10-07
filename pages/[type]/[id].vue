@@ -6,14 +6,14 @@
     </div>
 
     <div
-      class="sticky top-0 left-0 z-20 lg:relative flex justify-center items-center gap-[50px] sm:gap-[100px] py-4 backdrop-blur-md backdrop-brightness-50"
+      class="sticky top-0 left-0 z-20 lg:relative flex justify-center items-center gap-[12vw] sm:gap-[10rem] py-6 backdrop-blur-md backdrop-brightness-50"
     >
       <NuxtLinkLocale
         v-for="itm in tabList"
         :key="`${type}-${id}-${itm.path}`"
         v-slot="{ isActive }"
         :to="`/${type}/${id}/${itm.path}`"
-        class="relative z-10 text-[18px] sm:text-[22px] cursor-pointer"
+        class="relative z-10 text-4xl cursor-pointer"
         @click="changePage"
       >
         <span :class="isActive ? 'text-primary' : ''">
@@ -29,14 +29,14 @@
     </div>
 
     <!-- 演員 -->
-    <CardWrapper v-if="media.credits?.cast.length" class="cast_cards mt-8">
+    <CardWrapper v-if="media.credits?.cast.length" class="cast_cards mt-12">
       <template #title>
         {{ $t('Cast') }}
       </template>
       <div
         v-for="item in media.credits.cast"
         :key="item.id"
-        class="w-[120px] flex-shrink-0"
+        class="w-[12rem] flex-shrink-0"
       >
         <CardCast :cast="item" />
       </div>
@@ -51,7 +51,7 @@
         v-for="item in recommended.results"
         :key="item.id"
         :to="`/${item.media_type}/${item.id}/overview`"
-        class="w-[40%] sm:w-[250px] flex-shrink-0"
+        class="w-[40%] sm:w-[25rem] flex-shrink-0"
       >
         <CardMedia :media="item" />
       </NuxtLinkLocale>

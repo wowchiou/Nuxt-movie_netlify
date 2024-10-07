@@ -6,7 +6,7 @@
     <NuxtLinkLocale v-for="nav in navList" :key="nav.name" :to="nav.path">
       <NuxtIcon
         :name="nav.icon"
-        class="text-3xl"
+        class="text-5xl"
         :class="isActiveRoute(nav) && 'text-primary'"
       />
     </NuxtLinkLocale>

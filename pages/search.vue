@@ -2,22 +2,23 @@
   <!-- pages/search -->
   <div>
     <div
-      class="flex items-center px-3 sm:px-6 py-4 border-b-[1px] border-gray-600"
+      class="sticky top-0 left-0 z-20 flex items-center p-6 border-b-[1px] border-gray-600 backdrop-blur-md backdrop-brightness-50"
     >
-      <NuxtIcon class="text-3xl mr-2" name="material-symbols:search-rounded" />
+      <NuxtIcon class="text-5xl" name="material-symbols:search-rounded" />
       <ElInput
         v-model="currentSearch"
-        :placeholder="$t('Search')"
+        :placeholder="$t('Type something to search...')"
         size="large"
+        class="ml-4"
         @change="handleSearch"
       />
     </div>
-    <div class="px-3 sm:px-6">
-      <div class="pt-2">
-        <p class="text-3xl">
+    <div class="px-6">
+      <div class="pt-4">
+        <p class="text-4xl">
           {{ $t('Search result for: {currentSearch}', { currentSearch }) }}
         </p>
-        <p class="mt-1 text-xl">{{ $t('{count} items', { count }) }}</p>
+        <p class="mt-2 text-3xl">{{ $t('{count} items', { count }) }}</p>
       </div>
       <div class="mt-4">
         <InfiniteLoadSearch

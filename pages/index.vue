@@ -1,6 +1,6 @@
 <template>
   <!-- pages/index -->
-  <div class="relative h-[100dvh] w-full">
+  <div class="relative h-dvh w-full">
     <div
       class="grid grid-cols-2 md:grid-cols-3 h-full blur-[8px] after:contents-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-gray-950 after:opacity-70"
     >
@@ -21,20 +21,17 @@
       </div>
     </div>
     <div
-      class="absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 w-[80vw] sm:w-[50vw]"
+      class="absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 px-6 w-[80vw] sm:w-[50vw]"
     >
-      <div class="mb-4 w-[40px] sm:w-[60px] m-auto">
+      <div class="mb-8 w-[6rem] m-auto">
         <NuxtImg class="w-full" width="60" src="/img/movies.webp" />
       </div>
       <div class="flex items-center">
-        <NuxtIcon
-          class="text-3xl mr-2"
-          name="material-symbols:search-rounded"
-        />
+        <NuxtIcon class="text-6xl" name="material-symbols:search-rounded" />
         <ElInput
           v-model="search"
-          class="!w-full"
-          :placeholder="$t('Search')"
+          class="!w-full ml-4"
+          :placeholder="$t('Type something to search...')"
           size="large"
           @change="handleSearch"
         />

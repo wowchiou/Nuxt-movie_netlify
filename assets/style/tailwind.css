@@ -6,8 +6,16 @@
   @apply box-border;
 }
 
+:root {
+  @apply text-[8px] md:text-[10px];
+}
+
 html {
   @apply bg-gray-950 text-gray-100;
+}
+
+body {
+  @apply text-[1.6rem] leading-none;
 }
 
 a,

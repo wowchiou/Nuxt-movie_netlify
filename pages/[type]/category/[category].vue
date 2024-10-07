@@ -1,10 +1,10 @@
 <template>
   <!-- pages/[type]/category/[category] -->
-  <div class="px-3 sm:px-6 py-4">
-    <div class="text-[18px] sm:text-[22px]">
+  <div class="p-6">
+    <div class="text-4xl">
       {{ $t(queryItem.title) }}
     </div>
-    <div class="mt-4">
+    <div class="mt-6">
       <InfiniteLoadCategory :type="type" :query="category" />
     </div>
   </div>

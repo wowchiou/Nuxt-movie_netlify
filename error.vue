@@ -1,15 +1,15 @@
 <template>
   <div class="h-screen w-full text-gray-400 flex justify-center items-center">
     <div class="px-6 sm:px-0 inline-block">
-      <div class="text-[18px] sm:text-[24px] text-bold">
-        <p>
+      <div class="text-5xl text-bold">
+        <p class="flex items-center">
           <NuxtIcon
-            class="text-[50px] mr-2 text-red-300"
+            class="mr-4 text-6xl text-red-300"
             name="material-symbols-light:chat-error"
           />
           <span class="text-gray-200">{{ error.statusCode }}</span>
         </p>
-        <p class="text-gray-200">
+        <p class="text-4xl text-gray-200">
           {{
             error.statusCode === 404
               ? 'This page could not be found.'
@@ -17,12 +17,12 @@
           }}
         </p>
       </div>
-      <p class="text-[14px] sm:text-[18px] mt-2">
+      <p class="mt-4">
         Looks like you've followed a broken link or entered a URL that doesn't
         exist on this site.
       </p>
       <a
-        class="px-4 py-[2px] text-gray-800 text-[16px] bg-primary cursor-pointer rounded-sm mt-4"
+        class="p-4 text-gray-950 bg-primary cursor-pointer rounded-md mt-6"
         @click="handleError"
       >
         Back To Home

@@ -16,19 +16,19 @@
         class="w-full h-full"
         :style="{ 'view-transition-name': `item-${media.id}` }"
       />
-      <p v-else class="text-3xl">
+      <p v-else class="text-5xl">
         <NuxtIcon name="material-symbols:image-sharp" />
       </p>
     </div>
-    <p class="text-[16px] mt-1 line-clamp-1">
+    <p class="text-3xl mt-4 line-clamp-1">
       {{ media.title || media.name }}
     </p>
-    <div class="mt-1 flex items-center">
+    <div class="mt-2 flex items-center">
       <ImageBarStar
         class="w-[50%] sm:w-[40%] max-w-[100px]"
         :percent="setStars(media.vote_average)"
       />
-      <p class="text-sm ml-2 text-gray-400 leading-none">
+      <p class="text-[1.7rem] ml-4 text-gray-400">
         {{ formatRate(media.vote_average / 2) }}
       </p>
     </div>

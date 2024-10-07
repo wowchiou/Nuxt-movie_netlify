@@ -1,5 +1,5 @@
 <template>
-  <div class="text-[22px] flex gap-4">
+  <div class="text-[2.4rem] flex gap-8 leading-none">
     <!-- imdb -->
     <ExternalLink
       v-if="links.imdb_id"
@@ -76,6 +76,6 @@ defineProps<{
 
 <style scoped>
 .link {
-  @apply text-gray-100 sm:text-gray-400 sm:hover:text-gray-100;
+  @apply sm:text-gray-400 sm:hover:text-gray-100;
 }
 </style>

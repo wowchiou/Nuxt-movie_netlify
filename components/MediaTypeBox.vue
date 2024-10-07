@@ -6,7 +6,7 @@
         <h2>{{ $t(data.title) }}</h2>
         <NuxtLinkLocale
           :to="`/${data.type}/category/${data.query}`"
-          class="text-gray-500 sm:hover:text-gray-300 text-[13px] sm:text-[16px] cursor-pointer"
+          class="text-gray-400 sm:hover:text-gray-300 text-[1.6rem] cursor-pointer"
         >
           {{ $t('Explore more') }}
         </NuxtLinkLocale>
@@ -16,7 +16,7 @@
       v-for="item in result"
       :key="item.id"
       :to="`/${data.type}/${item.id}/overview`"
-      class="w-[50%] sm:w-[250px] flex-shrink-0"
+      class="w-[40%] sm:w-[25rem] flex-shrink-0"
     >
       <CardMedia :media="item" />
     </NuxtLinkLocale>

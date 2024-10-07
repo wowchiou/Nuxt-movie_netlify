@@ -1,7 +1,7 @@
 <template>
   <!-- LanguageSwitcher -->
   <div class="flex items-center">
-    <p class="mr-2">Language:</p>
+    <p class="mr-4">Language:</p>
     <ElSelect v-model="locale" class="!w-[150px]" @change="updateLocale">
       <ElOption
         v-for="lang in availableLocales"
