@@ -5,7 +5,7 @@
       class="absolute top-0 left-0 z-10 h-full w-full bg-gradient-to-t lg:bg-gradient-to-r from-gray-950 from-20% lg:from-40%"
     />
     <div
-      class="absolute top-1/2 left-0 px-6 lg:-translate-y-1/2 z-20 w-full max-h-[100%]"
+      class="absolute bottom-[20%] lg:bottom-auto top-auto lg:top-[60%] left-0 px-6 lg:-translate-y-1/2 z-20 w-full"
     >
       <h1 class="text-5xl leading-tight">
         {{ media.name || media.title }}
@@ -33,12 +33,12 @@
         </p>
       </div>
     </div>
-    <div class="aspect-[1220/659] w-full lg:w-[60%]">
+    <div class="aspect-video w-full lg:w-[60%]">
       <NuxtImg
         class="w-full h-full"
         :src="getExternalPic(media.backdrop_path)"
-        width="1220"
-        height="659"
+        width="640"
+        height="360"
         fit="cover"
         format="webp"
         :style="{ 'view-transition-name': `item-${media.id}` }"

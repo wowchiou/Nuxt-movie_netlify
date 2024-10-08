@@ -17,6 +17,7 @@
           fit="cover"
           format="webp"
           class="h-full w-full object-cover"
+          preload
         />
       </div>
     </div>

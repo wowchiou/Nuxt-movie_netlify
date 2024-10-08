@@ -5,14 +5,14 @@
         v-if="cast.profile_path"
         class="w-full h-full"
         :src="getExternalPic(cast.profile_path)"
-        width="500"
-        height="500"
+        width="200"
+        height="200"
         fit="cover"
         format="webp"
       />
       <p v-else class="text-3xl w-full h-full flex justify-center items-center">
         <NuxtIcon
-          class="text-gray-400 text-4xl"
+          class="text-gray-400 text-6xl"
           name="material-symbols:person"
         />
       </p>

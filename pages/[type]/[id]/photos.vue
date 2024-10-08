@@ -17,13 +17,13 @@
     <div class="mt-6">
       <div
         v-if="data?.images?.backdrops?.length"
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
       >
         <div
           v-for="(pic, idx) in data.images.backdrops"
           :key="`backdrop-${idx}`"
         >
-          <CardPhoto :data="pic" width="400" height="250" />
+          <CardPhoto :data="pic" width="400" height="225" />
         </div>
       </div>
       <div v-else class="text-3xl text-gray-400">
@@ -47,10 +47,10 @@
     <div class="mt-6">
       <div
         v-if="data?.images?.posters?.length"
-        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4"
+        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4"
       >
         <div v-for="(pic, idx) in data.images.posters" :key="`poster-${idx}`">
-          <CardPhoto :data="pic" width="250" height="400" />
+          <CardPhoto :data="pic" width="200" height="300" />
         </div>
       </div>
       <div v-else class="text-gray-400 text-3xl">No Poster Photos Result.</div>

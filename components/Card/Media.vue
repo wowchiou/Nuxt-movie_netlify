@@ -1,15 +1,15 @@
 <template>
   <!-- components/Card/Media -->
-  <div class="group">
+  <NuxtLinkLocale :to="path || ''" class="group">
     <div
-      class="aspect-[2/3] bg-gray-800 flex justify-center items-center sm:group-hover:ring-1 sm:group-hover:ring-primary sm:duration-75 p-[2px]"
+      class="bg-gray-800 flex justify-center items-center sm:group-hover:ring-1 sm:group-hover:ring-primary sm:duration-75 p-[2px] aspect-[2/3]"
     >
       <NuxtImg
         v-if="media.poster_path"
         :src="getExternalPic(media.poster_path)"
         :alt="media.title || media.name"
-        width="400"
-        height="600"
+        width="200"
+        height="300"
         fit="cover"
         format="webp"
         loading="lazy"
@@ -32,7 +32,7 @@
         {{ formatRate(media.vote_average / 2) }}
       </p>
     </div>
-  </div>
+  </NuxtLinkLocale>
 </template>
 
 <script setup lang="ts">
@@ -40,5 +40,6 @@ import type { SearchResult } from '~/types';
 
 defineProps<{
   media: SearchResult;
+  path?: string;
 }>();
 </script>

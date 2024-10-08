@@ -2,13 +2,13 @@
   <!-- components/Card/Video -->
   <div class="group" @click="handleOpen">
     <div
-      class="aspect-[16/9] p-[2px] bg-gray-700 sm:group-hover:ring-1 sm:group-hover:ring-primary sm:duration-75 relative"
+      class="aspect-video p-[2px] bg-gray-700 sm:group-hover:ring-1 sm:group-hover:ring-primary sm:duration-75 relative"
     >
       <NuxtImg
         class="w-full h-full"
         :src="getExternalPic(`/vi/${video.key}/maxresdefault.jpg`, 'yt')"
-        width="480"
-        height="720"
+        width="400"
+        height="225"
         fit="fill"
         format="webp"
         loading="lazy"

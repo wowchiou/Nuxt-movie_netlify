@@ -5,7 +5,7 @@
       <slot name="title" />
     </h3>
     <ElScrollbar always>
-      <div :class="`card-wrapper-div flex gap-4 pt-[2px] pb-8`">
+      <div :class="`card-wrapper-div flex gap-4 pt-[2px] pb-8 px-[2px] w-max`">
         <slot />
       </div>
     </ElScrollbar>

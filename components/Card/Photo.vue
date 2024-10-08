@@ -1,6 +1,6 @@
 <template>
   <!-- components/Card/Photo -->
-  <div :class="`aspect-[${data.aspect_ratio * 100}/100]`" class="bg-gray-800">
+  <div class="bg-gray-800" :class="`aspect-[${width}/${height}]`">
     <NuxtImg
       :src="getExternalPic(data.file_path)"
       :width="width"
@@ -23,8 +23,8 @@ withDefaults(
     height: string;
   }>(),
   {
-    width: '400',
-    height: '600',
+    width: '200',
+    height: '300',
   }
 );
 </script>

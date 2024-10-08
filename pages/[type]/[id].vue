@@ -33,13 +33,12 @@
       <template #title>
         {{ $t('Cast') }}
       </template>
-      <div
+      <CardCast
         v-for="item in media.credits.cast"
         :key="item.id"
         class="w-[12rem] flex-shrink-0"
-      >
-        <CardCast :cast="item" />
-      </div>
+        :cast="item"
+      />
     </CardWrapper>
 
     <!-- 更多類似的 -->
@@ -47,14 +46,13 @@
       <template #title>
         {{ $t('More like this') }}
       </template>
-      <NuxtLinkLocale
+      <CardMedia
         v-for="item in recommended.results"
         :key="item.id"
-        :to="`/${item.media_type}/${item.id}/overview`"
-        class="w-[40%] sm:w-[25rem] flex-shrink-0"
-      >
-        <CardMedia :media="item" />
-      </NuxtLinkLocale>
+        class="w-[40vw] sm:w-[25rem] flex-shrink-0"
+        :path="`/${item.media_type}/${item.id}/overview`"
+        :media="item"
+      />
     </CardWrapper>
   </div>
 </template>

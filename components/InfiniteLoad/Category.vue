@@ -7,13 +7,12 @@
     @load="loadMoreData"
   >
     <CardGroup>
-      <NuxtLinkLocale
+      <CardMedia
         v-for="itm in searchList"
         :key="itm.id"
-        :to="`/${type}/${itm.id}/overview`"
-      >
-        <CardMedia :media="itm" />
-      </NuxtLinkLocale>
+        :path="`/${type}/${itm.id}/overview`"
+        :media="itm"
+      />
     </CardGroup>
   </InfiniteLoad>
 </template>

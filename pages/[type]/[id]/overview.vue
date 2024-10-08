@@ -1,19 +1,24 @@
 <template>
   <!-- pages/[type]/[id]/overview -->
   <div v-if="data" class="px-6 max-w-[1920px] m-auto flex items-start gap-8">
-    <div class="aspect-[2/3] hidden md:block w-[35rem] p-[2px] bg-gray-800">
+    <div
+      class="aspect-[2/3] hidden md:block w-[25rem] lg:w-[35rem] p-[2px] bg-gray-800"
+    >
       <NuxtImg
         class="w-full h-full"
         :src="getExternalPic(data.poster_path)"
-        width="400"
-        height="600"
+        width="200"
+        height="300"
         fit="cover"
         format="webp"
       />
     </div>
     <div class="flex-1">
       <h2 class="text-4xl">{{ $t('Storyline') }}</h2>
-      <p class="text-3xl mt-4 leading-relaxed">{{ data.overview }}</p>
+      <div class="text-3xl mt-4 leading-relaxed">
+        <p v-if="data.overview">{{ data.overview }}</p>
+        <p v-else class="text-gray-400">No data found.</p>
+      </div>
       <div
         class="mt-8 text-[1.7rem] md:text-[1.6rem] text-gray-400 grid grid-cols-[max-content_1fr] lg:grid-cols-[max-content_1fr_max-content_1fr] gap-4 max-w-[800px] leading-tight"
       >

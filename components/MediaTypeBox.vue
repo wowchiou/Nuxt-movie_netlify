@@ -12,14 +12,13 @@
         </NuxtLinkLocale>
       </div>
     </template>
-    <NuxtLinkLocale
+    <CardMedia
       v-for="item in result"
       :key="item.id"
-      :to="`/${data.type}/${item.id}/overview`"
-      class="w-[40%] sm:w-[25rem] flex-shrink-0"
-    >
-      <CardMedia :media="item" />
-    </NuxtLinkLocale>
+      class="w-[40vw] sm:w-[25rem] flex-shrink-0"
+      :path="`/${data.type}/${item.id}/overview`"
+      :media="item"
+    />
   </CardWrapper>
 </template>
 
