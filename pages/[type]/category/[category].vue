@@ -15,7 +15,7 @@ import type { MediaType, QueryItem } from '~/types';
 
 definePageMeta({
   key: (route) => route.fullPath,
-  middleware: 'movie-or-tv',
+  middleware: ['movie-or-tv', 'no-category'],
 });
 
 const route = useRoute();
