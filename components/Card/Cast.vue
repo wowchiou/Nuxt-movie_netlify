@@ -11,6 +11,7 @@
         height="200"
         fit="cover"
         format="webp"
+        loading="lazy"
       />
       <p v-else class="text-3xl w-full h-full flex justify-center items-center">
         <NuxtIcon

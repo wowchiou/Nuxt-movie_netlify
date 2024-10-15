@@ -46,7 +46,7 @@
           height="300"
           fit="cover"
           format="webp"
-          lazy
+          loading="lazy"
         />
       </div>
     </CardWrapper>
