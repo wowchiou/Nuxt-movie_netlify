@@ -88,7 +88,7 @@ function changePage() {
     return;
   }
   const heroHeight = hero.value.offsetHeight;
-  window.scrollTo({ top: heroHeight, behavior: 'smooth' });
+  window.scrollTo({ top: heroHeight });
 }
 
 useHead({

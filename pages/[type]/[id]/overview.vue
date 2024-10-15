@@ -1,6 +1,6 @@
 <template>
   <!-- pages/[type]/[id]/overview -->
-  <div v-if="data" class="px-6 max-w-[1920px] m-auto flex items-start gap-8">
+  <div v-if="data" class="px-6 max-w-[1600px] m-auto flex items-start gap-8">
     <div
       class="aspect-[2/3] hidden md:block w-[25rem] lg:w-[35rem] p-[2px] bg-gray-800"
     >
