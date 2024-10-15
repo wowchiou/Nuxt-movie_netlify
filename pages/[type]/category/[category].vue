@@ -1,6 +1,6 @@
 <template>
   <!-- pages/[type]/category/[category] -->
-  <div class="p-6">
+  <div class="px-6 py-12">
     <div class="text-4xl">
       {{ $t(queryItem.title) }}
     </div>

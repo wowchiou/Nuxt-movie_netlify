@@ -28,32 +28,35 @@
       />
     </div>
 
-    <!-- 演員 -->
-    <CardWrapper v-if="media.credits?.cast.length" class="cast_cards mt-14">
-      <template #title>
-        {{ $t('Cast') }}
-      </template>
-      <CardCast
-        v-for="item in media.credits.cast"
-        :key="item.id"
-        class="w-[12rem] flex-shrink-0"
-        :cast="item"
-      />
-    </CardWrapper>
+    <div class="px-6">
+      <!-- 演員 -->
+      <CardWrapper v-if="media.credits?.cast.length" class="cast_cards mt-14">
+        <template #title>
+          {{ $t('Cast') }}
+        </template>
+        <CardCast
+          v-for="item in media.credits.cast"
+          :key="item.id"
+          :path="`/person/${item.id}`"
+          class="w-[12rem] flex-shrink-0"
+          :cast="item"
+        />
+      </CardWrapper>
 
-    <!-- 更多類似的 -->
-    <CardWrapper class="mt-14">
-      <template #title>
-        {{ $t('More like this') }}
-      </template>
-      <CardMedia
-        v-for="item in recommended.results"
-        :key="item.id"
-        class="w-[40vw] sm:w-[25rem] flex-shrink-0"
-        :path="`/${item.media_type}/${item.id}/overview`"
-        :media="item"
-      />
-    </CardWrapper>
+      <!-- 更多類似的 -->
+      <CardWrapper class="mt-14">
+        <template #title>
+          {{ $t('More like this') }}
+        </template>
+        <CardMedia
+          v-for="item in recommended.results"
+          :key="item.id"
+          class="w-[40vw] sm:w-[25rem] flex-shrink-0"
+          :path="`/${item.media_type}/${item.id}/overview`"
+          :media="item"
+        />
+      </CardWrapper>
+    </div>
   </div>
 </template>
 
@@ -91,12 +94,10 @@ function changePage() {
   window.scrollTo({ top: heroHeight });
 }
 
-useHead({
-  title: media.name || media.title,
-});
-
 useSeoMeta({
+  title: media.name || media.title,
   description: media.overview,
+  keywords: media.genres.map((genre) => genre.name).join(', '),
   ogTitle: `${media.name || media.title} | Nuxt Movies`,
   ogUrl: useRequestURL().href,
   ogDescription: media.overview,

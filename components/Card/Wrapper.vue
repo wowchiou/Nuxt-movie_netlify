@@ -1,6 +1,6 @@
 <template>
   <!-- components/Card/Wrapper -->
-  <div class="px-6">
+  <div>
     <h3 class="text-4xl mb-6">
       <slot name="title" />
     </h3>

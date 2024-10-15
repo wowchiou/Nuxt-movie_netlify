@@ -1,6 +1,6 @@
 <template>
   <!-- pages/[type]/index -->
-  <div class="py-6">
+  <div class="py-12 px-6">
     <MediaTypeBox
       v-for="(itm, idx) in pageQuery"
       :key="`media-${itm.title}`"

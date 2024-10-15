@@ -1,9 +1,11 @@
 <template>
-  <div class="group">
-    <div class="aspect-[1/1] rounded-[50%] overflow-hidden bg-gray-700">
+  <NuxtLinkLocale :to="path" class="group">
+    <div
+      class="aspect-[1/1] rounded-[50%] overflow-hidden bg-gray-700 p-[2px] sm:group-hover:ring-1 sm:group-hover:ring-primary sm:duration-75"
+    >
       <NuxtImg
         v-if="cast.profile_path"
-        class="w-full h-full"
+        class="w-full h-full rounded-[50%]"
         :src="getExternalPic(cast.profile_path)"
         width="200"
         height="200"
@@ -21,13 +23,17 @@
     <p class="text-gray-400 mt-2 line-clamp-1">
       {{ cast.character || cast.known_for_department }}
     </p>
-  </div>
+  </NuxtLinkLocale>
 </template>
 
 <script setup lang="ts">
 import type { Cast } from '~/types';
 
-defineProps<{
-  cast: Cast;
-}>();
+withDefaults(
+  defineProps<{
+    cast: Cast;
+    path: string;
+  }>(),
+  { path: '' }
+);
 </script>

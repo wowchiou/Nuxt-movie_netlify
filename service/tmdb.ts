@@ -4,6 +4,7 @@ import type {
   FetchParams,
   MovieDetails,
   PageResult,
+  PersonDetails,
   SearchResult,
 } from '~/types';
 
@@ -92,4 +93,10 @@ export const getTMDBMediaWithQuery = async (
   });
   res.results = filterBlocked(res.results);
   return res;
+};
+
+export const getPersonDetails = async (id: string) => {
+  return fetchTMDB<PersonDetails>(`person/${id}`, {
+    append_to_response: 'combined_credits,images,external_ids',
+  });
 };

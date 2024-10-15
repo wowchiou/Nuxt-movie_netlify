@@ -41,6 +41,7 @@
             <NuxtLinkLocale
               v-for="d in directors"
               :key="d.id"
+              :to="`/person/${d.id}`"
               class="text-[1.4rem] px-2 py-1 bg-gray-800 rounded"
             >
               {{ d.name }}

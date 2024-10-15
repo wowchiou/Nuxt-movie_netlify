@@ -1,81 +1,31 @@
 <template>
-  <div class="text-[2.4rem] flex gap-8 leading-none">
-    <!-- imdb -->
-    <ExternalLink
-      v-if="links.imdb_id"
-      :link="`https://www.imdb.com/title/${links.imdb_id}`"
-      label="IMDb"
-      class="link"
-    >
-      <NuxtIcon name="simple-icons:imdb" />
-    </ExternalLink>
-    <!-- twitter -->
-    <ExternalLink
-      v-if="links.twitter_id"
-      :link="`https://twitter.com/${links.twitter_id}`"
-      label="Twitter"
-      class="link"
-    >
-      <NuxtIcon name="simple-icons:twitter" />
-    </ExternalLink>
-    <!-- facebook -->
-    <ExternalLink
-      v-if="links.facebook_id"
-      :link="`https://www.facebook.com/${links.facebook_id}`"
-      label="Facebook"
-      class="link"
-    >
-      <NuxtIcon name="simple-icons:facebook" />
-    </ExternalLink>
-    <!-- instagram -->
-    <ExternalLink
-      v-if="links.instagram_id"
-      :link="`https://www.instagram.com/${links.instagram_id}`"
-      label="Instagram"
-      class="link"
-    >
-      <NuxtIcon name="simple-icons:instagram" />
-    </ExternalLink>
-    <!-- github -->
-    <ExternalLink
-      v-if="links.github_id"
-      :link="`https://www.github.com/${links.github_id}`"
-      label="github"
-      class="link"
-    >
-      <NuxtIcon name="simple-icons:github" />
-    </ExternalLink>
-    <!-- linkedin -->
-    <ExternalLink
-      v-if="links.linkedin_id"
-      :link="`https://www.linkedin.com/in/${links.linkedin_id}`"
-      label="linkedin"
-      class="link"
-    >
-      <NuxtIcon name="simple-icons:linkedin" />
-    </ExternalLink>
-    <!-- homepage -->
-    <ExternalLink
-      v-if="links.homepage"
-      :link="links.homepage"
-      label="homepage"
-      class="link"
-    >
-      <NuxtIcon name="mdi:link-variant" />
-    </ExternalLink>
+  <div class="text-[2.4rem] flex gap-8 leading-none group">
+    <template v-for="link in linksArray" :key="`external-${link.name}`">
+      <NuxtLink
+        v-if="getExternal(link.name) && link.value"
+        :to="`${getExternal(link.name)?.url}${link.value}`"
+        target="_blank"
+        class="sm:text-gray-400 sm:hover:text-gray-100"
+      >
+        <NuxtIcon :name="getExternal(link.name)?.icon || ''" />
+      </NuxtLink>
+    </template>
   </div>
 </template>
 
 <script setup lang="ts">
 import type { ExternalIds } from '~/types';
 
-defineProps<{
+const props = defineProps<{
   links: ExternalIds;
 }>();
-</script>
 
-<style scoped>
-.link {
-  @apply sm:text-gray-400 sm:hover:text-gray-100;
+const linksArray = Object.keys(props.links).map((key: string) => ({
+  name: key,
+  value: props.links[key],
+}));
+
+function getExternal(link: string) {
+  return EXTERNAL_LiNKS.find((e) => e.name === link);
 }
-</style>
+</script>

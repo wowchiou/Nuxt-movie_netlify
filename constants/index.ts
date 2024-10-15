@@ -37,3 +37,41 @@ export const NAV_LIST = [
     type: 'tv',
   },
 ];
+
+export const EXTERNAL_LiNKS = [
+  {
+    name: 'imdb_id',
+    url: 'https://www.imdb.com/title/',
+    icon: 'simple-icons:imdb',
+  },
+  {
+    name: 'twitter_id',
+    url: 'https://twitter.com/',
+    icon: 'simple-icons:twitter',
+  },
+  {
+    name: 'facebook_id',
+    url: 'https://www.facebook.com/',
+    icon: 'simple-icons:facebook',
+  },
+  {
+    name: 'instagram_id',
+    url: 'https://www.instagram.com/',
+    icon: 'simple-icons:instagram',
+  },
+  {
+    name: 'github_id',
+    url: 'https://www.github.com/',
+    icon: 'simple-icons:github',
+  },
+  {
+    name: 'linkedin_id',
+    url: 'https://www.linkedin.com/in/',
+    icon: 'simple-icons:linkedin',
+  },
+  {
+    name: 'homepage',
+    url: '',
+    icon: 'mdi:link-variant',
+  },
+];

@@ -90,6 +90,7 @@ export interface Credits {
 }
 
 export interface ExternalIds {
+  [key: string]: string | undefined;
   imdb_id?: string;
   facebook_id?: string;
   instagram_id?: string;
@@ -150,6 +151,7 @@ export interface MovieDetails extends CommonMediaType {
 export interface SearchResult extends CommonMediaType {
   media_type: string;
   genre_ids: number[];
+  character?: string;
 }
 
 export interface TabsDataType<T> {
@@ -163,4 +165,29 @@ export interface QueryItem {
   type: MediaType;
   title: string;
   query: string;
+}
+
+export interface PersonDetails {
+  adult: boolean;
+  also_known_as: string[];
+  biography: string;
+  birthday: string;
+  deathday: string;
+  gender: number;
+  homepage: string;
+  id: number;
+  imdb_id: string;
+  known_for_department: string;
+  name: string;
+  place_of_birth: string;
+  popularity: number;
+  profile_path: string;
+  external_ids: ExternalIds;
+  combined_credits: {
+    cast: SearchResult[];
+    crew: SearchResult[];
+  };
+  images: {
+    profiles: Image[];
+  };
 }

@@ -24,6 +24,10 @@ span {
   @apply inline-block align-middle;
 }
 
+.clearfix::after {
+  @apply block clear-both content-[''];
+}
+
 .reset-modal .el-dialog {
   @apply bg-transparent p-0;
 }
