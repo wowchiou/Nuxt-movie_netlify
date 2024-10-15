@@ -16,25 +16,6 @@ useHead({
   titleTemplate: (titleChunk: string | undefined) => {
     return titleChunk ? `${titleChunk} | Nuxt Movies` : 'Nuxt Movies';
   },
-  meta: [
-    {
-      name: 'description',
-      content: i18n.t('Web Description'),
-    },
-    {
-      name: 'viewport',
-      content: 'width=device-width, initial-scale=1, user-scalable=no',
-    },
-    { name: 'google', content: 'notranslate' },
-    { property: 'og:title', content: 'Nuxt Movie' },
-    {
-      property: 'og:description',
-      content: i18n.t('Web Description'),
-    },
-    { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: baseUrl },
-    { property: 'og:image', content: `${baseUrl}/social-card.png` },
-  ],
   link: [
     {
       rel: 'icon',
@@ -42,6 +23,18 @@ useHead({
       href: '/movies-sm.webp',
     },
   ],
+});
+
+useSeoMeta({
+  description: i18n.t('Web Description'),
+  viewport: 'width=device-width, initial-scale=1, user-scalable=no',
+  // @ts-expect-error: 'google' is not a standard property, but we need it for website
+  google: 'notranslate',
+  ogTitle: 'Nuxt Movie',
+  ogDescription: i18n.t('Web Description'),
+  ogType: 'website',
+  ogUrl: baseUrl,
+  ogImage: `${baseUrl}/social-card.png`,
 });
 </script>
 

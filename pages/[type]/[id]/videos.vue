@@ -41,4 +41,8 @@ const videos = ref<Video[] | undefined>(
 onMounted(() => {
   emit('mounted');
 });
+
+useSeoMeta({
+  ogUrl: useRequestURL().href,
+});
 </script>

@@ -93,21 +93,14 @@ function changePage() {
 
 useHead({
   title: media.name || media.title,
-  meta: [
-    { name: 'description', content: media.overview },
-    {
-      property: 'og:title',
-      content: `${media.name || media.title} | Nuxt Movies`,
-    },
-    {
-      property: 'og:description',
-      content: media.overview,
-    },
-    {
-      property: 'og:image',
-      content: getExternalPic(media.poster_path),
-    },
-  ],
+});
+
+useSeoMeta({
+  description: media.overview,
+  ogTitle: `${media.name || media.title} | Nuxt Movies`,
+  ogUrl: useRequestURL().href,
+  ogDescription: media.overview,
+  ogImage: getExternalPic(media.poster_path),
 });
 </script>
 

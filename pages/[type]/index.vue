@@ -28,4 +28,8 @@ const pageQuery = computed(() => {
 useHead({
   title: pageType.value === 'movie' ? 'Movies' : 'TV Shows',
 });
+
+useSeoMeta({
+  ogUrl: useRequestURL().href,
+});
 </script>

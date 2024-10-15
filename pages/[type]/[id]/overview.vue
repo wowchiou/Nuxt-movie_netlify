@@ -125,4 +125,8 @@ const links = computed(() => ({
 onMounted(() => {
   emit('mounted');
 });
+
+useSeoMeta({
+  ogUrl: useRequestURL().href,
+});
 </script>

@@ -29,4 +29,8 @@ const queryItem = QUERY_LIST[type].find(
 useHead({
   title: i18n.t(queryItem.title),
 });
+
+useSeoMeta({
+  ogUrl: useRequestURL().href,
+});
 </script>

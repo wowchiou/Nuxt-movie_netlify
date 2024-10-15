@@ -72,4 +72,8 @@ const emit = defineEmits<{
 onMounted(() => {
   emit('mounted');
 });
+
+useSeoMeta({
+  ogUrl: useRequestURL().href,
+});
 </script>
