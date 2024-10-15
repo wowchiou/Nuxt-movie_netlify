@@ -25,7 +25,7 @@
     </div>
 
     <div class="mt-14">
-      <div class="leading-snug text-3xl">
+      <div class="leading-relaxed text-3xl">
         <pre v-if="person?.biography" class="whitespace-pre-line">
           {{ person.biography }}
         </pre>
