@@ -22,12 +22,12 @@
       </div>
     </div>
     <div
-      class="absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 px-6 w-[80vw] sm:w-[50vw]"
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-6 w-[90vw] md:w-[50vw]"
     >
-      <div class="mb-8 w-[6rem] m-auto">
-        <NuxtImg class="w-full" width="60" src="/img/movies.webp" />
-      </div>
-      <div class="flex items-center">
+      <div class="flex items-center gap-6">
+        <div class="w-[5rem]">
+          <NuxtImg class="w-full" width="60" src="/img/movies.webp" />
+        </div>
         <ElInput
           v-model="search"
           class="!w-full"
@@ -35,11 +35,13 @@
           size="large"
           @change="handleSearch"
         />
-        <NuxtIcon
-          class="text-6xl ml-4 cursor-pointer"
-          name="material-symbols:search-rounded"
-          @click="handleSearch"
-        />
+        <div>
+          <NuxtIcon
+            class="text-6xl cursor-pointer"
+            name="material-symbols:search-rounded"
+            @click="handleSearch"
+          />
+        </div>
       </div>
     </div>
   </div>
