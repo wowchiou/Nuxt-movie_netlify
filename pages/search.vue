@@ -47,4 +47,5 @@ function handleSearch() {
 }
 
 useHead({ title: 'Search' });
+useSeoMeta({ ogUrl: useRequestURL().href });
 </script>
