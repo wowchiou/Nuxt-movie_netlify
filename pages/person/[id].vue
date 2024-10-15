@@ -16,7 +16,7 @@
         <NuxtImg
           v-if="person?.profile_path"
           :src="getExternalPic(person.profile_path)"
-          class="w-full h-full object-cover rounded-[50%]"
+          class="w-full h-full rounded-[50%]"
           width="300"
           height="300"
           fit="cover"
@@ -34,13 +34,13 @@
       <div
         v-for="img in person.images.profiles"
         :key="img.file_path"
-        class="aspect-[2/3] bg-gray-700 w-[40vw] sm:w-[25rem]"
+        class="aspect-[2/3] bg-gray-700"
       >
         <NuxtImg
           :src="getExternalPic(img.file_path)"
           width="200"
           hight="300"
-          class="w-full h-full"
+          class="w-[40vw] sm:w-[25rem]"
           fit="cover"
           format="webp"
           lazy
