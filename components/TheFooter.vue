@@ -10,12 +10,12 @@
       </div>
       <div class="flex items-center mt-4">
         <span>Made with</span>
-        <NuxtImg class="ml-2" src="/img/nuxt.svg" width="25" format="webp" />
+        <NuxtImg class="ml-2" src="/img/nuxt.svg" width="25" format="svg" />
         <span class="ml-1">Nuxt</span>
       </div>
       <div class="flex items-center mt-4">
         <span>Data provided by</span>
-        <NuxtImg class="ml-2" src="/img/tmdb.svg" width="50" format="webp" />
+        <NuxtImg class="ml-2" src="/img/tmdb.svg" width="50" format="svg" />
       </div>
       <div
         class="flex items-center my-12 leading-1 text-gray-400 leading-normal"

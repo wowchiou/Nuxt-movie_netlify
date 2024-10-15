@@ -2,16 +2,11 @@
   <div class="px-6 py-12">
     <h1 class="text-5xl flex items-end gap-4">
       <p>{{ person?.name }}</p>
-      <span class="text-3xl text-gray-400">{{ person?.birthday }}</span>
     </h1>
 
-    <div v-if="person?.external_ids" class="mt-6">
-      <ExternalLinkMovie :links="person.external_ids" />
-    </div>
-
-    <div v-if="person?.biography" class="max-w-[160rem] mt-14 clearfix">
+    <div v-if="person?.external_ids" class="mt-14 flex items-center">
       <div
-        class="aspect-square w-[30vw] sm:w-[25rem] max-w-[25rem] rounded-[50%] overflow-hidden bg-gray-700 ml-6 mb-6 float-right p-[2px] ring-[2px] ring-primary"
+        class="aspect-square w-[20vw] sm:w-[9rem] max-w-[25rem] rounded-[50%] overflow-hidden bg-gray-700 p-[2px] mr-10 ring-[2px] ring-primary"
       >
         <NuxtImg
           v-if="person?.profile_path"
@@ -23,10 +18,18 @@
           format="webp"
         />
       </div>
+      <div>
+        <p class="text-3xl text-gray-400">{{ person?.birthday }}</p>
+        <ExternalLinkMovie class="mt-6" :links="person.external_ids" />
+      </div>
+    </div>
+
+    <div class="mt-14">
       <div class="leading-snug text-3xl">
-        <pre class="whitespace-pre-line">
+        <pre v-if="person?.biography" class="whitespace-pre-line">
           {{ person.biography }}
         </pre>
+        <p v-else class="text-gray-400">{{ $t('No data found.') }}</p>
       </div>
     </div>
 
