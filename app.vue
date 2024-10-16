@@ -3,13 +3,24 @@
   <NuxtLayout class="selection:bg-primary selection:text-gray-700">
     <NuxtLoadingIndicator />
     <NuxtPage />
+    <GlobalLoading :loading="loading" />
   </NuxtLayout>
 </template>
 
 <script setup lang="ts">
 const i18n = useI18n();
 const url = useRequestURL();
+const nuxtApp = useNuxtApp();
+const loading = ref(false);
 const baseUrl = url.origin;
+
+nuxtApp.hook('page:start', () => {
+  loading.value = true;
+});
+
+nuxtApp.hook('page:finish', () => {
+  loading.value = false;
+});
 
 useHead({
   htmlAttrs: { lang: i18n.locale },

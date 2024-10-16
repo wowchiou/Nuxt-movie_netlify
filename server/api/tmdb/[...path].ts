@@ -5,22 +5,18 @@ interface FetchError extends Error {
 }
 
 export default defineEventHandler(async (event) => {
-  console.log('event: ', event);
-  console.log('path: ', event.path);
-
   const query = getQuery(event);
   const config = useRuntimeConfig();
   const apiKey = config.tmdbApiKey;
 
-  console.log('query: ', query);
-
   if (!apiKey) throw new Error('TMDB API key is not set');
   try {
-    return await $fetch(event.context.params!.path, {
+    const res = await $fetch(event.context.params!.path, {
       baseURL: config.tmdbBaseUrl,
       headers: { Accept: 'application/json' },
       params: Object.assign({ api_key: apiKey }, query),
     });
+    return res;
   } catch (error) {
     const fetchError = error as FetchError;
     const status = fetchError.response?.status || 500;

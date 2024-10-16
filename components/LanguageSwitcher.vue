@@ -15,11 +15,11 @@
 
 <script setup lang="ts">
 const { locale, locales, setLocale } = useI18n();
-const router = useRouter();
 const availableLocales = computed(() => locales.value);
 
 async function updateLocale(value: string) {
   await setLocale(value);
-  router.go(0);
+  await refreshNuxtData();
+  await reloadNuxtApp();
 }
 </script>

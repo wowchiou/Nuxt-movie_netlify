@@ -23,6 +23,7 @@
     <p class="text-3xl mt-4 line-clamp-1">
       {{ media.title || media.name }}
     </p>
+    <slot />
     <div class="mt-2 flex items-center">
       <ImageBarStar
         class="w-[50%] sm:w-[40%] max-w-[100px]"

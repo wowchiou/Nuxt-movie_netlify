@@ -23,17 +23,7 @@
       <p class="text-gray-400 mt-2">{{ video.type }}</p>
     </div>
 
-    <ElDialog
-      v-if="showVideo"
-      v-model="showVideo"
-      class="bg-transparent"
-      :show-close="false"
-      align-center
-      fullscreen
-      modal-class="reset-modal"
-    >
-      <DialogVideo :video="video" />
-    </ElDialog>
+    <DialogVideo :show="showVideo" :video="video" />
   </div>
 </template>
 

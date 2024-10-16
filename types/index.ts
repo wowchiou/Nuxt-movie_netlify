@@ -152,6 +152,7 @@ export interface SearchResult extends CommonMediaType {
   media_type: string;
   genre_ids: number[];
   character?: string;
+  job?: string;
 }
 
 export interface TabsDataType<T> {

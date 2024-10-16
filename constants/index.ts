@@ -41,7 +41,7 @@ export const NAV_LIST = [
 export const EXTERNAL_LiNKS = [
   {
     name: 'imdb_id',
-    url: 'https://www.imdb.com/title/',
+    url: 'https://www.imdb.com/name/',
     icon: 'simple-icons:imdb',
   },
   {

@@ -16,7 +16,9 @@
     <div class="flex-1">
       <h2 class="text-4xl">{{ $t('Storyline') }}</h2>
       <div class="text-3xl mt-4 leading-relaxed">
-        <p v-if="data.overview">{{ data.overview }}</p>
+        <pre v-if="data.overview" class="whitespace-pre-line">
+          {{ data.overview }}
+        </pre>
         <p v-else class="text-gray-400">No data found.</p>
       </div>
       <div
