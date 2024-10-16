@@ -73,7 +73,7 @@
       </template>
       <CardMedia
         v-for="itm in mostPopular(person?.combined_credits.cast || [], 'movie')"
-        :key="itm.id"
+        :key="`movie-cast-${itm.id}`"
         class="w-[40vw] sm:w-[25rem]"
         :media="itm"
         :path="`/${itm.media_type}/${itm.id}/overview`"
@@ -91,7 +91,7 @@
       </template>
       <CardMedia
         v-for="itm in mostPopular(person?.combined_credits.crew || [], 'movie')"
-        :key="itm.id"
+        :key="`movie-crew-${itm.id}`"
         class="w-[40vw] sm:w-[25rem]"
         :media="itm"
         :path="`/${itm.media_type}/${itm.id}/overview`"
@@ -109,7 +109,7 @@
       </template>
       <CardMedia
         v-for="itm in mostPopular(person?.combined_credits.cast || [], 'tv')"
-        :key="itm.id"
+        :key="`tv-cast-${itm.id}`"
         class="w-[40vw] sm:w-[25rem]"
         :media="itm"
         :path="`/${itm.media_type}/${itm.id}/overview`"
@@ -127,7 +127,7 @@
       </template>
       <CardMedia
         v-for="itm in mostPopular(person?.combined_credits.crew || [], 'tv')"
-        :key="itm.id"
+        :key="`tv-crew-${itm.id}`"
         class="w-[40vw] sm:w-[25rem]"
         :media="itm"
         :path="`/${itm.media_type}/${itm.id}/overview`"
