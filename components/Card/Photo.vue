@@ -1,8 +1,12 @@
 <template>
   <!-- components/Card/Photo -->
-  <div class="bg-gray-800" :class="`aspect-[${width}/${height}]`">
+  <div
+    class="bg-gray-800 cursor-pointer"
+    :class="`aspect-[${width}/${height}]`"
+    @click="handleOpen"
+  >
     <NuxtImg
-      :src="getExternalPic(data.file_path)"
+      :src="getExternalPic(pic)"
       :width="width"
       :height="height"
       loading="lazy"
@@ -10,15 +14,14 @@
       format="webp"
       class="w-full h-full"
     />
+    <DialogPhoto :show="showPhoto" :pic="getExternalPic(pic)" />
   </div>
 </template>
 
 <script setup lang="ts">
-import type { Image } from '~/types';
-
 withDefaults(
   defineProps<{
-    data: Image;
+    pic: string;
     width: string;
     height: string;
   }>(),
@@ -27,4 +30,10 @@ withDefaults(
     height: '300',
   }
 );
+
+const showPhoto = ref(false);
+
+function handleOpen() {
+  showPhoto.value = !showPhoto.value;
+}
 </script>

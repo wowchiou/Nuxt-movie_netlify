@@ -1,6 +1,7 @@
 <template>
   <!-- components/Dialog/Video -->
   <ElDialog
+    v-if="showVideo"
     v-model="showVideo"
     class="bg-transparent"
     :show-close="false"

@@ -54,21 +54,14 @@
     </div>
 
     <CardWrapper v-if="person?.images.profiles" class="mt-14">
-      <div
+      <CardPhoto
         v-for="img in person.images.profiles"
         :key="img.file_path"
-        class="aspect-[2/3] bg-gray-700 w-[40vw] sm:w-[25rem]"
-      >
-        <NuxtImg
-          :src="getExternalPic(img.file_path)"
-          class="w-full h-full"
-          width="200"
-          height="300"
-          fit="cover"
-          format="webp"
-          loading="lazy"
-        />
-      </div>
+        :pic="img.file_path"
+        width="200"
+        height="300"
+        class="w-[40vw] sm:w-[25rem]"
+      />
     </CardWrapper>
 
     <CardWrapper
