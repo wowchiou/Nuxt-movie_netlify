@@ -97,7 +97,7 @@
           </div>
         </template>
       </div>
-      <ExternalLinkMovie class="mt-8" :links="links" />
+      <ExternalLinkMovie class="mt-8" :links="links" type="title" />
     </div>
   </div>
 </template>

@@ -27,13 +27,17 @@
       </div>
       <div>
         <p class="text-3xl text-gray-400">
-          <span>{{ person.birthday.replace(/-/g, '.') }}</span>
+          <span>{{ person.birthday?.replace(/-/g, '.') || '--' }}</span>
           <template v-if="person.deathday">
-            <span class="mx-2">-</span>
+            <span class="mx-2">~</span>
             <span>{{ person.deathday.replace(/-/g, '.') }}</span>
           </template>
         </p>
-        <ExternalLinkMovie class="mt-4" :links="person.external_ids" />
+        <ExternalLinkMovie
+          class="mt-4"
+          :links="person.external_ids"
+          type="name"
+        />
       </div>
     </div>
 

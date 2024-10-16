@@ -18,6 +18,7 @@ import type { ExternalIds } from '~/types';
 
 const props = defineProps<{
   links: ExternalIds;
+  type: 'name' | 'title';
 }>();
 
 const linksArray = Object.keys(props.links).map((key: string) => ({
@@ -26,6 +27,12 @@ const linksArray = Object.keys(props.links).map((key: string) => ({
 }));
 
 function getExternal(link: string) {
-  return EXTERNAL_LiNKS.find((e) => e.name === link);
+  const res = EXTERNAL_LiNKS.find((e) => e.name === link);
+  const copyRes = res ? { ...res } : null;
+  if (copyRes && link === 'imdb_id') {
+    const imdbUrl = `${copyRes.url}${props.type}/`;
+    copyRes.url = imdbUrl;
+  }
+  return copyRes;
 }
 </script>
