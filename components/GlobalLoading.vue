@@ -40,10 +40,10 @@ const isLoading = computed(() => props.loading);
 }
 @keyframes shine {
   0% {
-    opacity: 0;
+    opacity: 0.3;
   }
   50% {
-    opacity: 0;
+    opacity: 0.3;
   }
   100% {
     opacity: 1;

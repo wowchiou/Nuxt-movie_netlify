@@ -5,7 +5,7 @@
     >
       <NuxtImg
         v-if="cast.profile_path"
-        class="w-full h-full rounded-[50%]"
+        class="w-full h-full rounded-[50%] object-cover"
         :src="getExternalPic(cast.profile_path)"
         width="200"
         height="200"

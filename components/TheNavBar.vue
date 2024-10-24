@@ -1,6 +1,6 @@
 <template>
   <!-- TheNavBar -->
-  <div
+  <nav
     class="flex md:flex-col justify-around md:justify-center items-center md:gap-y-[10vh] bg-gray-950 border-t-[1px] md:border-r-[1px] md:border-t-0 border-gray-600"
   >
     <NuxtLinkLocale v-for="nav in navList" :key="nav.name" :to="nav.path">
@@ -10,7 +10,7 @@
         :class="isActiveRoute(nav) && 'text-primary'"
       />
     </NuxtLinkLocale>
-  </div>
+  </nav>
 </template>
 
 <script setup lang="ts">
