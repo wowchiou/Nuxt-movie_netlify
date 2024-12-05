@@ -18,11 +18,16 @@ export default defineEventHandler(async (event) => {
   const apiKey = config.tmdbApiKey;
 
   // 允許的來源清單
-  const allowedOrigins = ['https://ac-movies.netlify.app'];
+  const allowedOrigins = [
+    'https://ac-movies.netlify.app',
+    'https://ac-movies.netlify.app/',
+  ];
 
   // 獲取請求的來源
   const origin =
     event.node.req.headers.origin || event.node.req.headers.referer || '';
+
+  console.log('Origin:', origin);
 
   // CORS 驗證邏輯
   if (process.env.NODE_ENV === 'development') {
