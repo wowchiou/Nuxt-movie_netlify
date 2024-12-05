@@ -18,10 +18,10 @@ export default defineEventHandler(async (event) => {
   const apiKey = config.tmdbApiKey;
 
   // 允許的來源清單
-  const allowedOrigins = [
-    'https://ac-movies.netlify.app',
-    'https://ac-movies.netlify.app/',
-  ];
+  // const allowedOrigins = [
+  //   'https://ac-movies.netlify.app',
+  //   'https://ac-movies.netlify.app/',
+  // ];
 
   // 獲取請求的來源
   const origin =
@@ -32,8 +32,8 @@ export default defineEventHandler(async (event) => {
   // CORS 驗證邏輯
   if (process.env.NODE_ENV === 'development') {
     setHeaders(event, getHeaders('*')); // 開發環境允許所有來源
-  } else if (allowedOrigins.includes(origin)) {
-    setHeaders(event, getHeaders(origin)); // 生產環境只允許清單中的來源
+  } else if (event.node.req.headers.origin === '') {
+    setHeaders(event, getHeaders('https://ac-movies.netlify.app')); // 生產環境只允許清單中的來源
   } else {
     setResponseStatus(event, 403); // 禁止訪問
     return { error: 'Forbidden: Origin not allowed' };
