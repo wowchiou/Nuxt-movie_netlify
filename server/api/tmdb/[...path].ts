@@ -24,15 +24,15 @@ export default defineEventHandler(async (event) => {
   // ];
 
   // 獲取請求的來源
-  const origin =
-    event.node.req.headers.origin || event.node.req.headers.referer || '';
+  // const origin = event.node.req.headers.origin || '';
 
-  console.log('Origin:', origin);
+  console.log('Origin type:', typeof event.node.req.headers.origin);
+  console.log('Origin:', event.node.req.headers.origin);
 
   // CORS 驗證邏輯
   if (process.env.NODE_ENV === 'development') {
     setHeaders(event, getHeaders('*')); // 開發環境允許所有來源
-  } else if (event.node.req.headers.origin === '') {
+  } else if (!event.node.req.headers.origin) {
     setHeaders(event, getHeaders('https://ac-movies.netlify.app')); // 生產環境只允許清單中的來源
   } else {
     setResponseStatus(event, 403); // 禁止訪問
