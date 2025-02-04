@@ -32,6 +32,7 @@ export default defineNuxtConfig({
         'mdi',
         'line-md',
         'i-material-symbols',
+        'i-simple-icons',
       ],
     },
     provider: 'iconify',
