@@ -49,8 +49,8 @@
           {{ $t('More like this') }}
         </template>
         <CardMedia
-          v-for="item in recommended.results"
-          :key="item.id"
+          v-for="(item, idx) in recommended.results"
+          :key="`${item.media_type}-${item.id}-${idx}`"
           class="w-[40vw] sm:w-[25rem] flex-shrink-0"
           :path="`/${item.media_type}/${item.id}/overview`"
           :media="item"

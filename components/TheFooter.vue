@@ -41,11 +41,11 @@
         <div class="px-2 py-1 bg-gray-800 rounded-sm">
           <NuxtLink
             class="flex items-center"
-            to="https://www.netlify.com/"
+            to="https://vercel.com/home"
             target="_blank"
           >
-            <NuxtIcon name="simple-icons:netlify" />
-            <span class="text-2xl ml-2">power by Netlify</span>
+            <NuxtIcon name="simple-icons:vercel" />
+            <span class="text-2xl ml-2">power by Vercel</span>
           </NuxtLink>
         </div>
       </div>

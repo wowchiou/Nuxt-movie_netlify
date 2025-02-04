@@ -13,8 +13,8 @@
       </div>
     </template>
     <CardMedia
-      v-for="item in result"
-      :key="item.id"
+      v-for="(item, index) in result"
+      :key="`${data.type}-${item.id}-${index}`"
       class="w-[40vw] sm:w-[25rem] flex-shrink-0"
       :path="`/${data.type}/${item.id}/overview`"
       :media="item"

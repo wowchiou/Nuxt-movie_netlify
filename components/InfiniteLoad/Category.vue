@@ -8,8 +8,8 @@
   >
     <CardGroup>
       <CardMedia
-        v-for="itm in searchList"
-        :key="itm.id"
+        v-for="(itm, idx) in searchList"
+        :key="`${type}-${itm.id}-${idx}`"
         :path="`/${type}/${itm.id}/overview`"
         :media="itm"
       />

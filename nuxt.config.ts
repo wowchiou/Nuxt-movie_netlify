@@ -25,11 +25,16 @@ export default defineNuxtConfig({
   ],
   icon: {
     componentName: 'NuxtIcon',
-    // serverBundle: {
-    //   collections: ['material-symbols', 'simple-icons', 'mdi', 'line-md'],
-    // },
+    serverBundle: {
+      collections: [
+        'material-symbols',
+        'simple-icons',
+        'mdi',
+        'line-md',
+        'i-material-symbols',
+      ],
+    },
     provider: 'iconify',
-    serverBundle: false,
   },
   i18n: {
     detectBrowserLanguage: {
@@ -99,17 +104,17 @@ export default defineNuxtConfig({
     routeRules: {
       '/ipx/tmdb/**': {
         proxy: 'https://image.tmdb.org/t/p/original/**',
-        headers: {
-          // 設置緩存為一個月
-          'Cache-Control': 'public, max-age=2592000, immutable',
-        },
+        // headers: {
+        //   // 設置緩存為一個月
+        //   'Cache-Control': 'public, max-age=2592000, immutable',
+        // },
       },
       '/ipx/yt/**': {
         proxy: 'https://img.youtube.com/**',
-        headers: {
-          // 設置緩存為一個月
-          'Cache-Control': 'public, max-age=2592000, immutable',
-        },
+        // headers: {
+        //   // 設置緩存為一個月
+        //   'Cache-Control': 'public, max-age=2592000, immutable',
+        // },
       },
     },
   },
