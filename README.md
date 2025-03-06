@@ -9,7 +9,7 @@
 ## 技術棧
 
 - **Node.js**：v20.17.0  
-- **前端**：Nuxt 3、Vue 3、TypeScript、vue i18n、Tailwind CSS  
+- **前端**：Nuxt 3、Vue 3、TypeScript、vue i18n、Tailwind CSS、RWD
 - **第三方API**：TMDB API
 
 ---
